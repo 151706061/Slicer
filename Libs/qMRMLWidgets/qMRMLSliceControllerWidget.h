@@ -179,7 +179,7 @@ signals:
 
 protected:
   QScopedPointer<qMRMLSliceControllerWidgetPrivate> d_ptr;
-
+  virtual bool eventFilter(QObject*, QEvent*);
 private:
   Q_DECLARE_PRIVATE(qMRMLSliceControllerWidget);
   Q_DISABLE_COPY(qMRMLSliceControllerWidget);
