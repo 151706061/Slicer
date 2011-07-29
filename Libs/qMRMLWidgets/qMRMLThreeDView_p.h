@@ -65,11 +65,11 @@ public slots:
   void updateWidgetFromMRML();
 
 protected:
+  void initDisplayableManagers();
 
   vtkMRMLDisplayableManagerGroup*    DisplayableManagerGroup;
   vtkMRMLScene*                      MRMLScene;
   vtkMRMLViewNode*                   MRMLViewNode;
-  bool                               IgnoreScriptedDisplayableManagers;
   
   QToolButton*                       PinButton;
   ctkPopupWidget*                    PopupWidget;

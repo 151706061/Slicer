@@ -50,8 +50,6 @@ int qMRMLThreeDWidgetTest1(int argc, char * argv [] )
   widget.setMRMLScene(scene.GetPointer());
   widget.setMRMLViewNode(viewNode.GetPointer());
   
-  widget.registerDisplayableManagers("");
-  
   if (argc < 2 || QString(argv[1]) != "-I" )
     {
     QTimer::singleShot(200, &app, SLOT(quit()));

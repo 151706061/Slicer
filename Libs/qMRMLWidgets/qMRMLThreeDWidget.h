@@ -57,8 +57,8 @@ public:
   /// unsynchronize the view from the nodes/logics.
   Q_INVOKABLE qMRMLThreeDView* threeDView()const;
 
-  void registerDisplayableManagers(const QString& scriptedDisplayableManagerDirectory);
-  void setIgnoreScriptedDisplayableManagers(bool ignore);
+  /// \sa qMRMLThreeDView::addDisplayableManager
+  void addDisplayableManager(const QString& displayableManager);
 
 public slots:
   /// Set the current \a viewNode to observe

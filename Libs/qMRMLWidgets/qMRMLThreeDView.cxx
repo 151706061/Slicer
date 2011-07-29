@@ -35,8 +35,9 @@
 #include "qMRMLThreeDView_p.h"
 
 // MRMLDisplayableManager includes
-#include <vtkMRMLThreeDViewDisplayableManagerFactory.h>
+#include <vtkMRMLAbstractDisplayableManager.h>
 #include <vtkMRMLDisplayableManagerGroup.h>
+#include <vtkMRMLThreeDViewDisplayableManagerFactory.h>
 #include <vtkThreeDViewInteractorStyle.h>
 
 // MRML includes
@@ -66,7 +67,6 @@ qMRMLThreeDViewPrivate::qMRMLThreeDViewPrivate(qMRMLThreeDView& object)
   this->DisplayableManagerGroup = 0;
   this->MRMLScene = 0;
   this->MRMLViewNode = 0;
-  this->IgnoreScriptedDisplayableManagers = false;
   this->PinButton = 0;
   this->PopupWidget = 0;
 }
@@ -105,6 +105,30 @@ void qMRMLThreeDViewPrivate::init()
   q->setPitchDirection(ctkVTKRenderView::PitchUp);
   q->setRollDirection(ctkVTKRenderView::RollRight);
   q->setYawDirection(ctkVTKRenderView::YawLeft);
+
+  this->initDisplayableManagers();
+}
+
+//---------------------------------------------------------------------------
+void qMRMLThreeDViewPrivate::initDisplayableManagers()
+{
+  Q_Q(qMRMLThreeDView);
+  vtkMRMLThreeDViewDisplayableManagerFactory* factory
+    = vtkMRMLThreeDViewDisplayableManagerFactory::GetInstance();
+  this->DisplayableManagerGroup
+    = factory->InstantiateDisplayableManagers(q->renderer());
+  // Observe displayable manager group to catch RequestRender events
+  this->qvtkConnect(this->DisplayableManagerGroup, vtkCommand::UpdateEvent,
+                    q, SLOT(scheduleRender()));
+
+  QStringList displayableManagers;
+  displayableManagers << "vtkMRMLCameraDisplayableManager"
+                      << "vtkMRMLViewDisplayableManager"
+                      << "vtkMRMLModelDisplayableManager";
+  foreach(const QString& displayableManager, displayableManagers)
+    {
+    factory->RegisterDisplayableManager(displayableManager.toLatin1());
+    }
 }
 
 //---------------------------------------------------------------------------
@@ -220,55 +244,15 @@ qMRMLThreeDView::~qMRMLThreeDView()
 }
 
 //------------------------------------------------------------------------------
-void qMRMLThreeDView::registerDisplayableManagers(const QString& scriptedDisplayableManagerDirectory)
+void qMRMLThreeDView::addDisplayableManager(const QString& displayableManagerName)
 {
   Q_D(qMRMLThreeDView);
-
-  QStringList displayableManagers;
-  displayableManagers << "vtkMRMLCameraDisplayableManager"
-      << "vtkMRMLViewDisplayableManager"
-      << "vtkMRMLModelDisplayableManager";
-
-#ifdef Slicer_USE_PYTHONQT
-  if (!d->IgnoreScriptedDisplayableManagers)
-    {
-    QFileInfo dirInfo(scriptedDisplayableManagerDirectory);
-    if (dirInfo.isDir())
-      {
-      displayableManagers << QString("%1/vtkScriptedExampleDisplayableManager.py").arg(
-          scriptedDisplayableManagerDirectory);
-      }
-    else
-      {
-      logger.error(QString("registerDisplayableManagers - directory %1 doesn't exists !").
-                   arg(scriptedDisplayableManagerDirectory));
-      }
-    }
-#else
-  Q_UNUSED(scriptedDisplayableManagerDirectory);
-#endif
-
-  // Register Displayable Managers
-  vtkMRMLThreeDViewDisplayableManagerFactory* factory = vtkMRMLThreeDViewDisplayableManagerFactory::GetInstance();
-  foreach(const QString displayableManagerName, displayableManagers)
-    {
-    if (!factory->IsDisplayableManagerRegistered(displayableManagerName.toLatin1()))
-      {
-      factory->RegisterDisplayableManager(displayableManagerName.toLatin1());
-      }
-    }
-
-  d->DisplayableManagerGroup = factory->InstantiateDisplayableManagers(this->renderer());
-  Q_ASSERT(d->DisplayableManagerGroup);
-  d->DisplayableManagerGroup->SetMRMLDisplayableNode(this->mrmlViewNode());
-
-  // Observe displayable manager group to catch RequestRender events
-  d->qvtkConnect(d->DisplayableManagerGroup, vtkCommand::UpdateEvent,
-                 this, SLOT(scheduleRender()));
+  vtkSmartPointer<vtkMRMLAbstractDisplayableManager> displayableManager;
+  displayableManager.TakeReference(
+    vtkMRMLDisplayableManagerGroup::InstantiateDisplayableManager(
+      displayableManagerName.toLatin1()));
+  d->DisplayableManagerGroup->AddDisplayableManager(displayableManager);
 }
-
-//------------------------------------------------------------------------------
-CTK_SET_CPP(qMRMLThreeDView, bool, setIgnoreScriptedDisplayableManagers, IgnoreScriptedDisplayableManagers);
 
 //------------------------------------------------------------------------------
 void qMRMLThreeDView::setMRMLScene(vtkMRMLScene* newScene)
@@ -291,20 +275,16 @@ void qMRMLThreeDView::setMRMLViewNode(vtkMRMLViewNode* newViewNode)
     return;
     }
 
-  // Enable/disable widget
-  this->setEnabled(newViewNode != 0);
-
-  if (d->DisplayableManagerGroup)
-    {
-    d->DisplayableManagerGroup->SetMRMLDisplayableNode(newViewNode);
-    }
-
   d->qvtkReconnect(
     d->MRMLViewNode, newViewNode,
     vtkCommand::ModifiedEvent, d, SLOT(updateWidgetFromMRML()));
+
   d->MRMLViewNode = newViewNode;
+  d->DisplayableManagerGroup->SetMRMLDisplayableNode(newViewNode);
 
   d->updateWidgetFromMRML();
+  // Enable/disable widget
+  this->setEnabled(newViewNode != 0);
 }
 
 //---------------------------------------------------------------------------

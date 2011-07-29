@@ -151,19 +151,10 @@ qMRMLThreeDWidget::~qMRMLThreeDWidget()
 }
 
 // --------------------------------------------------------------------------
-void qMRMLThreeDWidget::registerDisplayableManagers(
-  const QString& scriptedDisplayableManagerDirectory)
+void qMRMLThreeDWidget::addDisplayableManager(const QString& dManager)
 {
   Q_D(qMRMLThreeDWidget);
-  d->ThreeDView->registerDisplayableManagers(
-    scriptedDisplayableManagerDirectory);
-}
-
-// --------------------------------------------------------------------------
-void qMRMLThreeDWidget::setIgnoreScriptedDisplayableManagers(bool ignore)
-{
-  Q_D(qMRMLThreeDWidget);
-  d->ThreeDView->setIgnoreScriptedDisplayableManagers(ignore);
+  d->ThreeDView->addDisplayableManager(dManager);
 }
 
 // --------------------------------------------------------------------------
