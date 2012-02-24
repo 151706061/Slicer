@@ -100,6 +100,13 @@ public:
   /// \note If exitWhenDone is True, it's your responsability to exit the application
   void parseArguments(bool& exitWhenDone);
 
+  /// After parsing arguments and before exec() is called, returnCode contains the
+  /// return code if any (!= -1).
+  /// -1 if the application has not been asked to exit.
+  /// EXIT_SUCCESS (0) if the application must return in success.
+  /// EXIT_FAILURE (1) if the application failed.
+  int returnCode()const;
+
   /// Get MRML Scene
   Q_INVOKABLE vtkMRMLScene* mrmlScene() const;
 
