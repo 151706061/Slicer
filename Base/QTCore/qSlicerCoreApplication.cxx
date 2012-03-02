@@ -1030,7 +1030,9 @@ void qSlicerCoreApplication::setExtensionsInstallPath(const QString& path)
   QSettings* appSettings = this->settings();
   Q_ASSERT(appSettings);
   appSettings->setValue("Extensions/InstallPath", path);
+#ifdef Slicer_BUILD_EXTENSIONMANAGER_SUPPORT
   this->extensionManagerModel()->updateModel();
+#endif
 }
 
 //-----------------------------------------------------------------------------
