@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<xml>
+    <settings>
+        <name widget="qApp" command="applicationName" arguments="Slicer"/>
+        <version widget="qApp" command="applicationVersion" arguments="4.0.1-2011-12-14"/>
+        <font widget="MainWindow" command="font" arguments="Bitstream Charter,14,-1,5,50,0,0,0,0,0"/>
+        <geometry widget="MainWindow" command="mainWindowGeometry" arguments="01d9d0cb0001000000000000000000180000068f00000401000000000000002c0000046500000310000000000200"/>
+        <state widget="MainWindow" command="mainWindowState" arguments="000000ff00000000fd00000001000000000000018b00000374fc0200000001fb0000001e00500061006e0065006c0044006f0063006b005700690064006700650074010000004300000374000000cf00ffffff000004ff0000037400000004000000040000000800000008fc00000001000000020000000900000016004d00610069006e0054006f006f006c0042006100720100000000ffffffff00000000000000000000002a004d006f00640075006c006500530065006c006500630074006f00720054006f006f006c0042006100720100000053ffffffff00000000000000000000001a004d006f00640075006c00650054006f006f006c0042006100720100000230000000d300000000000000000000001e0055006e0064006f005200650064006f0054006f006f006c0042006100720000000000ffffffff00000000000000000000001600560069006500770054006f006f006c00420061007201000003030000004100000000000000000000001a004c00610079006f007500740054006f006f006c00420061007201000003440000021100000000000000000000001c00430061007000740075007200650054006f006f006c0042006100720100000555ffffffff000000000000000000000020004d006f007500730065004d006f006400650054006f006f006c00420061007201000005cdffffffff00000000000000000000001c00560069006500770065007200730054006f006f006c0042006100720100000656ffffffff0000000000000000"/>
+    </settings>
+    <events>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="-120,0,0,9,138"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="-120,0,0,9,138"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="-120,0,0,9,138"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="-120,0,0,9,138"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="-120,0,0,9,138"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="-120,0,0,9,138"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="-120,0,0,9,138"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="-120,0,0,9,138"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="-120,0,0,9,138"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="-240,0,0,9,138"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="-120,0,0,9,138"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="-120,0,0,9,138"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="-120,0,0,9,138"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="-120,0,0,9,138"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="-120,0,0,9,138"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="-120,0,0,9,138"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="-240,0,0,9,138"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="-120,0,0,9,138"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="-240,0,0,9,138"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="-120,0,0,9,138"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="-480,0,0,9,138"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="-120,0,0,9,138"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="-120,0,0,9,138"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="120,0,0,9,138"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="120,0,0,9,138"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="240,0,0,9,138"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="240,0,0,9,138"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="120,0,0,9,138"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="120,0,0,9,138"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="120,0,0,9,138"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="120,0,0,9,138"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="240,0,0,9,138"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="120,0,0,9,138"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="120,0,0,9,138"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="-120,0,0,9,138"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="120,0,0,9,138"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="120,0,0,9,138"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="120,0,0,9,138"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="120,0,0,9,138"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="240,0,0,9,138"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="120,0,0,9,138"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="-120,0,0,9,138"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="-120,0,0,9,138"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="-120,0,0,9,138"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="-120,0,0,9,138"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="-360,0,0,9,138"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="-120,0,0,9,138"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="-120,0,0,9,138"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="-120,0,0,9,138"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="-120,0,0,9,138"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="-120,0,0,9,138"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="-240,0,0,9,138"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="-120,0,0,9,138"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="-120,0,0,9,138"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="-120,0,0,9,138"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="-120,0,0,9,138"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="-360,0,0,9,138"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="-120,0,0,9,138"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="-120,0,0,9,138"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="-240,0,0,9,138"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="-120,0,0,9,138"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="-120,0,0,9,138"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="-120,0,0,9,138"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="-360,0,0,9,138"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="-120,0,0,9,138"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="-120,0,0,9,138"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="120,0,0,9,138"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="-120,0,0,9,138"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="-120,0,0,9,138"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="-120,0,0,9,138"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="-240,0,0,9,138"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_vcontainer/1QScrollBar0" command="mouseWheel" arguments="-120,0,0,9,138"/>
+    </events>
+</xml>

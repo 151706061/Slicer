@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<xml>
+    <settings>
+        <name widget="qApp" command="applicationName" arguments="Slicer"/>
+        <version widget="qApp" command="applicationVersion" arguments="4.0.1.2012-02-28"/>
+    </settings>
+    <events>
+        <event widget="qSlicerMainWindow/menubar" command="activate" arguments="menuFile"/>
+        <event widget="qSlicerMainWindow/menubar/menuFile" command="activate" arguments="actionFileAddData"/>
+        <event widget="qSlicerDataDialog/AddFilesButton" command="activate" arguments=""/>
+        <event widget="getOpenFileName" command="comment" arguments="Loading dwi.nhdr ... "/>
+        <event widget="getOpenFileName" command="comment" arguments="Loading dwi.raw ... "/>
+        <event widget="getOpenFileName" command="newFile" arguments="/home/benjaminlong/work/slicer/Tuto-MRI/dwi.nhdr#/home/benjaminlong/work/slicer/Tuto-MRI/dwi.raw"/>
+        <event widget="qSlicerDataDialog/ShowOptionsCheckBox" command="set_boolean" arguments="true"/>
+        <event widget="qSlicerDataDialog/FileWidget/qt_scrollarea_viewport/qSlicerVolumesIOOptionsWidget/CenteredCheckBox" command="set_boolean" arguments="true"/>
+        <event widget="qSlicerDataDialog/FileWidget/qt_scrollarea_viewport/qSlicerVolumesIOOptionsWidget/CenteredCheckBox" command="set_boolean" arguments="true"/>
+        <event widget="qSlicerDataDialog/ButtonBox/1QPushButton0" command="activate" arguments=""/>
+    </events>
+</xml>

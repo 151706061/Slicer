@@ -372,7 +372,8 @@ void qMRMLSliceControllerWidgetPrivate::init()
 void qMRMLSliceControllerWidgetPrivate::setupLinkedOptionsMenu()
 {
   Q_Q(qMRMLSliceControllerWidget);
-  QMenu* linkedMenu = new QMenu(tr("Linked"), this->SliceLinkButton);
+  QMenu* linkedMenu = new QMenu(tr("Linked"),this->SliceLinkButton);
+  linkedMenu->setObjectName("linkedMenu");
 
   linkedMenu->addAction(this->actionHotLinked);
 
@@ -386,7 +387,8 @@ void qMRMLSliceControllerWidgetPrivate::setupLinkedOptionsMenu()
 void qMRMLSliceControllerWidgetPrivate::setupReformatOptionsMenu()
 {
   Q_Q(qMRMLSliceControllerWidget);
-  QMenu* reformatMenu = new QMenu(tr("Reformat"), this->ShowReformatWidgetToolButton);
+  QMenu* reformatMenu = new QMenu(tr("Reformat"),this->ShowReformatWidgetToolButton);
+  reformatMenu->setObjectName("reformatMenu");
 
   reformatMenu->addAction(this->actionLockNormalToCamera);
 
@@ -400,7 +402,8 @@ void qMRMLSliceControllerWidgetPrivate::setupReformatOptionsMenu()
 void qMRMLSliceControllerWidgetPrivate::setupLightboxMenu()
 {
   // Lightbox View
-  this->LightboxMenu = new QMenu(tr("Lightbox view"), this->LightBoxToolButton);
+  this->LightboxMenu = new QMenu(tr("Lightbox view"));
+  this->LightboxMenu->setObjectName("LightboxMenu");
   this->LightboxMenu->setIcon(QIcon(":/Icons/LayoutLightboxView.png"));
   this->LightboxMenu->addAction(this->actionLightbox1x1_view);
   this->LightboxMenu->addAction(this->actionLightbox1x2_view);
@@ -412,6 +415,7 @@ void qMRMLSliceControllerWidgetPrivate::setupLightboxMenu()
   this->LightboxMenu->addAction(this->actionLightbox3x3_view);
   this->LightboxMenu->addAction(this->actionLightbox6x6_view);
   QMenu* customLightboxMenu = new QMenu(tr("Custom"), this->LightboxMenu);
+  customLightboxMenu->setObjectName("customLightboxMenu");
   QWidget* customLightbox = new QWidget(this->LightboxMenu);
   QHBoxLayout* customLightboxLayout = new QHBoxLayout(customLightbox);
   this->LightBoxRowsSpinBox = new QSpinBox(customLightbox);
@@ -447,7 +451,8 @@ void qMRMLSliceControllerWidgetPrivate::setupLightboxMenu()
 void qMRMLSliceControllerWidgetPrivate::setupCompositingMenu()
 {
   // Compositing
-  this->CompositingMenu = new QMenu(tr("Compositing"), this->SliceCompositeButton);
+  this->CompositingMenu = new QMenu(tr("Compositing"));
+  this->CompositingMenu->setObjectName("CompositingMenu");
   this->CompositingMenu->setIcon(QIcon(":/Icons/SlicesComposite.png"));
   this->CompositingMenu->addAction(this->actionCompositingAlpha_blend);
   this->CompositingMenu->addAction(this->actionCompositingReverse_alpha_blend);
@@ -467,10 +472,12 @@ void qMRMLSliceControllerWidgetPrivate::setupSliceSpacingMenu()
   Q_Q(qMRMLSliceControllerWidget);
 
   // Spacing mode
-  this->SliceSpacingMenu = new QMenu(tr("Slice spacing mode"), this->SliceSpacingButton);
+  this->SliceSpacingMenu = new QMenu(tr("Slice spacing mode"));
+  this->SliceSpacingMenu->setObjectName("SlicerSpacingMenu");
   this->SliceSpacingMenu->setIcon(QIcon(":/Icons/SlicerAutomaticSliceSpacing.png"));
   this->SliceSpacingMenu->addAction(this->actionSliceSpacingModeAutomatic);
   QMenu* sliceSpacingManualMode = new QMenu(tr("Manual spacing"), this->SliceSpacingMenu);
+  sliceSpacingManualMode->setObjectName("slicerSpacingManualMode");
   sliceSpacingManualMode->setIcon(QIcon(":/Icon/SlicerManualSliceSpacing.png"));
   this->SliceSpacingSpinBox = new QDoubleSpinBox(sliceSpacingManualMode);
   this->SliceSpacingSpinBox->setDecimals(3);
@@ -485,6 +492,7 @@ void qMRMLSliceControllerWidgetPrivate::setupSliceSpacingMenu()
   this->SliceSpacingMenu->addMenu(sliceSpacingManualMode);
 
   QMenu* sliceFOVMenu = new QMenu(tr("Field of view"), this->SliceSpacingMenu);
+  sliceFOVMenu->setObjectName("slicerFOVMenu");
   sliceFOVMenu->setIcon(QIcon(":/Icon/SlicesFieldOfView.png"));
   QWidget* sliceFOVWidget = new QWidget(this->SliceSpacingMenu);
   QHBoxLayout* sliceFOVLayout = new QHBoxLayout(sliceFOVWidget);
@@ -506,7 +514,7 @@ void qMRMLSliceControllerWidgetPrivate::setupSliceSpacingMenu()
 void qMRMLSliceControllerWidgetPrivate::setupMoreOptionsMenu()
 {
   QMenu* advancedMenu = new QMenu(tr("Advanced"), this->SliceMoreOptionButton);
-
+  advancedMenu->setObjectName("advancedMenu");
   advancedMenu->addMenu(this->CompositingMenu);
   advancedMenu->addAction(this->actionRotate_to_volume_plane);
   advancedMenu->addMenu(this->SliceSpacingMenu);

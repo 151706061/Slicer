@@ -61,6 +61,7 @@ void qSlicerMouseModeToolBarPrivate::init()
 
   // RotateMode action
   this->ViewTransformModeAction = new QAction(q);
+  this->ViewTransformModeAction->setObjectName("MouseRotateMode");
   this->ViewTransformModeAction->setIcon(QIcon(":/Icons/MouseRotateMode.png"));
   this->ViewTransformModeAction->setText("&Rotate");
   this->ViewTransformModeAction->setToolTip("Set the 3DViewer mouse mode to transform view");
@@ -73,8 +74,10 @@ void qSlicerMouseModeToolBarPrivate::init()
   // place once
 
   this->CreateAndPlaceMenu = new QMenu(QObject::tr("Create and Place"), q);
+  this->CreateAndPlaceMenu->setObjectName("CreateAndPlaceMenu");
 
   this->CreateAndPlaceToolButton = new QToolButton();
+  this->CreateAndPlaceToolButton->setObjectName("CreateAndPlaceToolButton");
   this->CreateAndPlaceToolButton->setCheckable(true);
 //  this->CreateAndPlaceToolButton->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
   this->CreateAndPlaceToolButton->setToolButtonStyle(Qt::ToolButtonIconOnly);
@@ -267,6 +270,7 @@ void qSlicerMouseModeToolBarPrivate::updateWidgetFromSelectionNode()
       {
       // add it
       QAction * newAction = new QAction(this->CreateAndPlaceMenu);
+      newAction->setObjectName(annotationID);
       newAction->setIcon(QIcon(annotationResource));
       if (newAction->icon().isNull())
         {
@@ -537,8 +541,8 @@ void qSlicerMouseModeToolBar::switchPlaceMode()
   QAction *thisAction = d->CreateAndPlaceToolButton->menu()->activeAction();
   if (thisAction)
     {
-    annotationID = thisAction->text();
-    //qDebug() << "qSlicerMouseModeToolBar::switchPlaceMode: got active action text " << annotationID;
+    annotationID = thisAction->data().toString();
+//    qDebug() << "qSlicerMouseModeToolBar::switchPlaceMode: got active action data " << annotationID;
     }
   else
     {
@@ -546,8 +550,8 @@ void qSlicerMouseModeToolBar::switchPlaceMode()
     if (thisAction)
       {
       annotationID = thisAction->data().toString();
-      //qDebug() << "qSlicerMouseModeToolBar::switchPlaceMode: got action group checked action text "
-      //         << thisAction->data().toString() << ", id = " << annotationID;
+//      qDebug() << "qSlicerMouseModeToolBar::switchPlaceMode: got action group checked action text "
+//               << thisAction->data().toString() << ", id = " << annotationID;
       }
     }
   if (annotationID.isEmpty())
@@ -561,7 +565,7 @@ void qSlicerMouseModeToolBar::switchPlaceMode()
     {
     selectionNode->SetActiveAnnotationID(annotationID.toAscii().data());
     std::string resource = selectionNode->GetAnnotationResourceByID(std::string(annotationID.toAscii().data()));
-    //qDebug() << "qSlicerMouseModeToolBar::switchPlaceMode: got resource " << resource.c_str();
+    qDebug() << "qSlicerMouseModeToolBar::switchPlaceMode: got resource " << resource.c_str();
     // change the cursor
     this->changeCursorTo(QCursor(QPixmap(resource.c_str()),-1,0));
 

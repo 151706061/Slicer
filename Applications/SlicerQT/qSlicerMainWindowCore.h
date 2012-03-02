@@ -19,7 +19,7 @@
 ==============================================================================*/
 
 #ifndef __qSlicerMainWindowCore_h
-#define __qSlicerMainWindowCore_h 
+#define __qSlicerMainWindowCore_h
 
 // Qt includes
 #include <QObject>
@@ -29,20 +29,20 @@
 
 #include "qSlicerQTExport.h"
 
-class qSlicerMainWindow; 
+class qSlicerMainWindow;
 class qSlicerMainWindowCorePrivate;
 
 class Q_SLICERQT_EXPORT qSlicerMainWindowCore : public QObject
 {
   Q_OBJECT
-  
+
 public:
   typedef QObject Superclass;
   qSlicerMainWindowCore(qSlicerMainWindow *parent = 0);
   virtual ~qSlicerMainWindowCore();
 
-public slots: 
-  /// 
+public slots:
+  ///
   /// Handle actions - See qSlicerMainWindow::setupMenuActions
 
   void onFileAddDataActionTriggered();
@@ -56,6 +56,8 @@ public slots:
   void onSDBZipDirectoryActionTriggered();
   void onSDBZipToDCMActionTriggered();
   void onFileCloseSceneActionTriggered();
+  void onEditRecordMacroActionTriggered();
+  void onEditPlayMacroActionTriggered();
   void onEditUndoActionTriggered();
   void onEditRedoActionTriggered();
   void setLayout(int);

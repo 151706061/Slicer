@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<xml>
+    <settings>
+        <name widget="qApp" command="applicationName" arguments="Slicer"/>
+        <version widget="qApp" command="applicationVersion" arguments="4.0.1-2011-12-14"/>
+        <font widget="MainWindow" command="font" arguments="Bitstream Charter,14,-1,5,50,0,0,0,0,0"/>
+        <geometry widget="MainWindow" command="mainWindowGeometry" arguments="01d9d0cb000100000000007d0000008b00000616000003bb00000083000000a400000610000003b5000000000000"/>
+        <state widget="MainWindow" command="mainWindowState" arguments="000000ff00000000fd00000001000000000000018b000002b5fc0200000001fb0000001e00500061006e0065006c0044006f0063006b0057006900640067006500740100000043000002b5000000cf00ffffff000003fd000002b500000004000000040000000800000008fc00000001000000020000000900000016004d00610069006e0054006f006f006c0042006100720100000000ffffffff00000000000000000000002a004d006f00640075006c006500530065006c006500630074006f00720054006f006f006c0042006100720100000053ffffffff00000000000000000000001a004d006f00640075006c00650054006f006f006c004200610072010000021c000000d300000000000000000000001e0055006e0064006f005200650064006f0054006f006f006c0042006100720000000000ffffffff00000000000000000000001600560069006500770054006f006f006c00420061007201000002ef0000004100000000000000000000001a004c00610079006f007500740054006f006f006c00420061007201000003300000021100000000000000000000001c00430061007000740075007200650054006f006f006c00420061007201000004dcffffffff000000000000000000000020004d006f007500730065004d006f006400650054006f006f006c0042006100720100000518ffffffff00000000000000000000001c00560069006500770065007200730054006f006f006c0042006100720100000554ffffffff0000000000000000"/>
+    </settings>
+    <events>
+        <event widget="qSlicerMainWindow/ModuleSelectorToolBar/1ctkMenuComboBox0" command="set_edit" arguments="true"/>
+        <event widget="qSlicerMainWindow/ModuleSelectorToolBar/1ctkMenuComboBox0" command="set_edit_string_menu" arguments="A"/>
+        <event widget="1QListView0" command="keyEvent" arguments="7,16777248,0,,0,1"/>
+        <event widget="1QListView0" command="keyEvent" arguments="7,65,0,a,0,1"/>
+        <event widget="1QListView0" command="keyEvent" arguments="6,78,0,n,0,1"/>
+        <event widget="qSlicerMainWindow/ModuleSelectorToolBar/1ctkMenuComboBox0" command="set_edit_string_menu" arguments="An"/>
+        <event widget="1QListView0" command="keyEvent" arguments="7,78,0,n,0,1"/>
+        <event widget="1QListView0" command="keyEvent" arguments="6,78,0,n,0,1"/>
+        <event widget="qSlicerMainWindow/ModuleSelectorToolBar/1ctkMenuComboBox0" command="set_edit_string_menu" arguments="Ann"/>
+        <event widget="1QListView0" command="keyEvent" arguments="6,79,0,o,0,1"/>
+        <event widget="qSlicerMainWindow/ModuleSelectorToolBar/1ctkMenuComboBox0" command="set_edit_string_menu" arguments="Anno"/>
+        <event widget="1QListView0" command="keyEvent" arguments="7,78,0,n,0,1"/>
+        <event widget="1QListView0" command="keyEvent" arguments="7,79,0,o,0,1"/>
+        <event widget="1QListView0" command="keyEvent" arguments="6,84,0,t,0,1"/>
+        <event widget="qSlicerMainWindow/ModuleSelectorToolBar/1ctkMenuComboBox0" command="set_edit_string_menu" arguments="Annot"/>
+        <event widget="1QListView0" command="keyEvent" arguments="6,65,0,a,0,1"/>
+        <event widget="qSlicerMainWindow/ModuleSelectorToolBar/1ctkMenuComboBox0" command="set_edit_string_menu" arguments="Annota"/>
+        <event widget="1QListView0" command="keyEvent" arguments="7,84,0,t,0,1"/>
+        <event widget="1QListView0" command="keyEvent" arguments="6,84,0,t,0,1"/>
+        <event widget="qSlicerMainWindow/ModuleSelectorToolBar/1ctkMenuComboBox0" command="set_edit_string_menu" arguments="Annotat"/>
+        <event widget="1QListView0" command="keyEvent" arguments="7,65,0,a,0,1"/>
+        <event widget="1QListView0" command="keyEvent" arguments="7,84,0,t,0,1"/>
+        <event widget="1QListView0" command="keyEvent" arguments="6,85,0,u,0,1"/>
+        <event widget="qSlicerMainWindow/ModuleSelectorToolBar/1ctkMenuComboBox0" command="set_edit_string_menu" arguments="Annotatu"/>
+        <event widget="qSlicerMainWindow/ModuleSelectorToolBar/1ctkMenuComboBox0" command="set_edit_string_menu" arguments="Annotatui"/>
+        <event widget="qSlicerMainWindow/ModuleSelectorToolBar/1ctkMenuComboBox0" command="set_edit_string_menu" arguments="Annotatu"/>
+        <event widget="qSlicerMainWindow/ModuleSelectorToolBar/1ctkMenuComboBox0" command="set_edit_string_menu" arguments="Annotat"/>
+        <event widget="1QListView0" command="keyEvent" arguments="7,16777219,0,,0,1"/>
+        <event widget="1QListView0" command="keyEvent" arguments="6,73,0,i,0,1"/>
+        <event widget="qSlicerMainWindow/ModuleSelectorToolBar/1ctkMenuComboBox0" command="set_edit_string_menu" arguments="Annotati"/>
+        <event widget="1QListView0" command="keyEvent" arguments="6,79,0,o,0,1"/>
+        <event widget="qSlicerMainWindow/ModuleSelectorToolBar/1ctkMenuComboBox0" command="set_edit_string_menu" arguments="Annotatio"/>
+        <event widget="1QListView0" command="keyEvent" arguments="6,78,0,n,0,1"/>
+        <event widget="qSlicerMainWindow/ModuleSelectorToolBar/1ctkMenuComboBox0" command="set_edit_string_menu" arguments="Annotation"/>
+        <event widget="1QListView0" command="keyEvent" arguments="7,73,0,i,0,1"/>
+        <event widget="1QListView0" command="keyEvent" arguments="7,79,0,o,0,1"/>
+        <event widget="1QListView0" command="keyEvent" arguments="6,83,0,s,0,1"/>
+        <event widget="qSlicerMainWindow/ModuleSelectorToolBar/1ctkMenuComboBox0" command="set_edit_string_menu" arguments="Annotations"/>
+        <event widget="1QListView0" command="keyEvent" arguments="7,78,0,n,0,1"/>
+        <event widget="1QListView0" command="keyEvent" arguments="7,83,0,s,0,1"/>
+        <event widget="1QListView0" command="keyEvent" arguments="6,16777220,0,&#13;,0,1"/>
+        <event widget="qSlicerMainWindow/ModuleSelectorToolBar/1ctkMenuComboBox0" command="triggered" arguments="Annotations"/>
+        <event widget="qSlicerMainWindow/ModuleSelectorToolBar/1ctkMenuComboBox0" command="triggered" arguments="Annotations"/>
+        <event widget="qSlicerMainWindow/ModuleSelectorToolBar/1ctkMenuComboBox0" command="set_edit" arguments="true"/>
+        <event widget="qSlicerMainWindow/ModuleSelectorToolBar/1ctkMenuComboBox0" command="set_edit_string_menu" arguments="V"/>
+        <event widget="1QListView0" command="keyEvent" arguments="7,16777248,0,,0,1"/>
+        <event widget="1QListView0" command="keyEvent" arguments="7,86,0,v,0,1"/>
+        <event widget="1QListView0" command="keyEvent" arguments="6,79,0,o,0,1"/>
+        <event widget="qSlicerMainWindow/ModuleSelectorToolBar/1ctkMenuComboBox0" command="set_edit_string_menu" arguments="Vo"/>
+        <event widget="1QListView0" command="keyEvent" arguments="7,79,0,o,0,1"/>
+        <event widget="1QListView0" command="keyEvent" arguments="6,76,0,l,0,1"/>
+        <event widget="qSlicerMainWindow/ModuleSelectorToolBar/1ctkMenuComboBox0" command="set_edit_string_menu" arguments="Vol"/>
+        <event widget="1QListView0" command="keyEvent" arguments="7,76,0,l,0,1"/>
+        <event widget="1QListView0" command="keyEvent" arguments="6,85,0,u,0,1"/>
+        <event widget="qSlicerMainWindow/ModuleSelectorToolBar/1ctkMenuComboBox0" command="set_edit_string_menu" arguments="Volu"/>
+        <event widget="1QListView0" command="keyEvent" arguments="7,85,0,u,0,1"/>
+        <event widget="1QListView0" command="keyEvent" arguments="6,16777237,0,,0,1"/>
+        <event widget="qSlicerMainWindow/ModuleSelectorToolBar/1ctkMenuComboBox0" command="set_edit_string_menu" arguments="Volume Rendering"/>
+        <event widget="1QListView0" command="keyEvent" arguments="7,16777237,0,,0,1"/>
+        <event widget="1QListView0" command="keyEvent" arguments="6,16777237,0,,0,1"/>
+        <event widget="qSlicerMainWindow/ModuleSelectorToolBar/1ctkMenuComboBox0" command="set_edit_string_menu" arguments="Crop Volume"/>
+        <event widget="1QListView0" command="keyEvent" arguments="7,16777237,0,,0,1"/>
+        <event widget="1QListView0" command="keyEvent" arguments="6,16777237,0,,0,1"/>
+        <event widget="qSlicerMainWindow/ModuleSelectorToolBar/1ctkMenuComboBox0" command="set_edit_string_menu" arguments="Volumes"/>
+        <event widget="1QListView0" command="keyEvent" arguments="7,16777237,0,,0,1"/>
+        <event widget="1QListView0" command="keyEvent" arguments="6,16777220,0,&#13;,0,1"/>
+        <event widget="qSlicerMainWindow/ModuleSelectorToolBar/1ctkMenuComboBox0" command="triggered" arguments="Volumes"/>
+        <event widget="qSlicerMainWindow/ModuleSelectorToolBar/1ctkMenuComboBox0" command="triggered" arguments="Volumes"/>
+    </events>
+</xml>

@@ -465,6 +465,7 @@ void qMRMLNodeComboBox::renameCurrentNode()
     return;
     }
   bool ok = false;
+
   QString newName = QInputDialog::getText(
     this, "Rename " + d->nodeTypeLabel(), "New name:",
     QLineEdit::Normal, node->GetName(), &ok);
@@ -473,6 +474,7 @@ void qMRMLNodeComboBox::renameCurrentNode()
     return;
     }
   node->SetName(newName.toLatin1());
+  emit currentNodeRenamed(newName);
 }
 
 // --------------------------------------------------------------------------

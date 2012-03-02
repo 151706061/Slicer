@@ -1,0 +1,194 @@
+<?xml version="1.0"?>
+<xml>
+    <settings>
+        <name widget="qApp" command="applicationName" arguments="Slicer"/>
+        <version widget="qApp" command="applicationVersion" arguments="4.0.1-2011-12-14"/>
+        <font widget="MainWindow" command="font" arguments="Bitstream Charter,14,-1,5,50,0,0,0,0,0"/>
+        <geometry widget="MainWindow" command="mainWindowGeometry" arguments="01d9d0cb0001000000000000000000180000068f00000401000000000000002c0000046500000310000000000200"/>
+        <state widget="MainWindow" command="mainWindowState" arguments="000000ff00000000fd0000000100000000000001d400000374fc0200000001fb0000001e00500061006e0065006c0044006f0063006b005700690064006700650074010000004300000374000000cf00ffffff000004b60000037400000004000000040000000800000008fc00000001000000020000000900000016004d00610069006e0054006f006f006c0042006100720100000000ffffffff00000000000000000000002a004d006f00640075006c006500530065006c006500630074006f00720054006f006f006c0042006100720100000053ffffffff00000000000000000000001a004d006f00640075006c00650054006f006f006c004200610072010000021c000000d300000000000000000000001e0055006e0064006f005200650064006f0054006f006f006c0042006100720000000000ffffffff00000000000000000000001600560069006500770054006f006f006c00420061007201000002ef0000004100000000000000000000001a004c00610079006f007500740054006f006f006c00420061007201000003300000021100000000000000000000001c00430061007000740075007200650054006f006f006c0042006100720100000541ffffffff000000000000000000000020004d006f007500730065004d006f006400650054006f006f006c00420061007201000005b9ffffffff00000000000000000000001c00560069006500770065007200730054006f006f006c0042006100720100000656ffffffff0000000000000000"/>
+    </settings>
+    <events>
+        <event widget="qSlicerMainWindow/menubar" command="activate" arguments="menuFile"/>
+        <event widget="qSlicerMainWindow/menubar/menuFile" command="activate" arguments="actionFileLoadScene"/>
+        <event widget="LoadSceneDialog" command="newFile" arguments="/home/benjaminlong/work/nac-brain-atlas-1.0/brain-atlas-flat.mrml"/>
+        <event widget="qSlicerMainWindow/ModuleSelectorToolBar/1ctkMenuComboBox0" command="show_popup" arguments="true"/>
+        <event widget="qSlicerMainWindow/ModuleSelectorToolBar/1ctkMenuComboBox0" command="show_popup" arguments="false"/>
+        <event widget="qSlicerMainWindow/ModuleSelectorToolBar/1ctkMenuComboBox0" command="triggered" arguments="Scene Views"/>
+        <event widget="qSlicerMainWindow/ModuleSelectorToolBar/1ctkMenuComboBox0" command="triggered" arguments="Scene Views"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_viewport/scrollAreaWidgetContents/qSlicerSceneViewsModule/CTKCollapsibleButton/CTKCollapsibleGroupBox_3/sceneView" command="activate" arguments=""/>
+        <event widget="qMRMLScreenShotDialog/descriptionTextEdit/qt_scrollarea_viewport" command="mousePress" arguments="1,1,0,98,24"/>
+        <event widget="qMRMLScreenShotDialog/descriptionTextEdit/qt_scrollarea_viewport" command="mouseRelease" arguments="1,0,0,98,24"/>
+        <event widget="qMRMLScreenShotDialog/descriptionTextEdit" command="key" arguments="16777248"/>
+        <event widget="qMRMLScreenShotDialog/descriptionTextEdit" command="set_string" arguments="S"/>
+        <event widget="qMRMLScreenShotDialog/descriptionTextEdit" command="set_string" arguments="Sc"/>
+        <event widget="qMRMLScreenShotDialog/descriptionTextEdit" command="key" arguments="16777219"/>
+        <event widget="qMRMLScreenShotDialog/descriptionTextEdit" command="key" arguments="16777219"/>
+        <event widget="qMRMLScreenShotDialog/descriptionTextEdit" command="key" arguments="16777248"/>
+        <event widget="qMRMLScreenShotDialog/descriptionTextEdit" command="set_string" arguments="F"/>
+        <event widget="qMRMLScreenShotDialog/descriptionTextEdit" command="set_string" arguments="Fu"/>
+        <event widget="qMRMLScreenShotDialog/descriptionTextEdit" command="set_string" arguments="Ful"/>
+        <event widget="qMRMLScreenShotDialog/descriptionTextEdit" command="set_string" arguments="Full"/>
+        <event widget="qMRMLScreenShotDialog/descriptionTextEdit" command="key" arguments="32"/>
+        <event widget="qMRMLScreenShotDialog/descriptionTextEdit" command="set_string" arguments="Full l"/>
+        <event widget="qMRMLScreenShotDialog/descriptionTextEdit" command="set_string" arguments="Full la"/>
+        <event widget="qMRMLScreenShotDialog/descriptionTextEdit" command="set_string" arguments="Full lay"/>
+        <event widget="qMRMLScreenShotDialog/descriptionTextEdit" command="set_string" arguments="Full layou"/>
+        <event widget="qMRMLScreenShotDialog/descriptionTextEdit" command="set_string" arguments="Full layout"/>
+        <event widget="qMRMLScreenShotDialog/descriptionTextEdit" command="set_string" arguments="Full layout"/>
+        <event widget="qMRMLScreenShotDialog/descriptionTextEdit" command="key" arguments="32"/>
+        <event widget="qMRMLScreenShotDialog/descriptionTextEdit" command="set_string" arguments="Full layout te"/>
+        <event widget="qMRMLScreenShotDialog/descriptionTextEdit" command="set_string" arguments="Full layout test"/>
+        <event widget="qMRMLScreenShotDialog/descriptionTextEdit" command="set_string" arguments="Full layout test"/>
+        <event widget="qMRMLScreenShotDialog/descriptionTextEdit" command="set_string" arguments="Full layout test"/>
+        <event widget="qMRMLScreenShotDialog/nameEdit" command="key" arguments="16777248"/>
+        <event widget="qMRMLScreenShotDialog/nameEdit" command="set_string" arguments="F"/>
+        <event widget="qMRMLScreenShotDialog/nameEdit" command="set_string" arguments="Fu"/>
+        <event widget="qMRMLScreenShotDialog/nameEdit" command="set_string" arguments="Ful"/>
+        <event widget="qMRMLScreenShotDialog/nameEdit" command="set_string" arguments="Full"/>
+        <event widget="qMRMLScreenShotDialog/nameEdit" command="key" arguments="32"/>
+        <event widget="qMRMLScreenShotDialog/nameEdit" command="set_string" arguments="Full la"/>
+        <event widget="qMRMLScreenShotDialog/nameEdit" command="set_string" arguments="Full la"/>
+        <event widget="qMRMLScreenShotDialog/nameEdit" command="set_string" arguments="Full lay"/>
+        <event widget="qMRMLScreenShotDialog/nameEdit" command="set_string" arguments="Full layou"/>
+        <event widget="qMRMLScreenShotDialog/nameEdit" command="set_string" arguments="Full layou"/>
+        <event widget="qMRMLScreenShotDialog/nameEdit" command="set_string" arguments="Full layout"/>
+        <event widget="qMRMLScreenShotDialog/nameEdit" command="key" arguments="32"/>
+        <event widget="qMRMLScreenShotDialog/nameEdit" command="set_string" arguments="Full layout te"/>
+        <event widget="qMRMLScreenShotDialog/nameEdit" command="set_string" arguments="Full layout test"/>
+        <event widget="qMRMLScreenShotDialog/nameEdit" command="set_string" arguments="Full layout test"/>
+        <event widget="qMRMLScreenShotDialog/nameEdit" command="set_string" arguments="Full layout test"/>
+        <event widget="qMRMLScreenShotDialog/nameEdit" command="key" arguments="32"/>
+        <event widget="qMRMLScreenShotDialog/nameEdit" command="set_string" arguments="Full layout test t"/>
+        <event widget="qMRMLScreenShotDialog/nameEdit" command="set_string" arguments="Full layout test ti"/>
+        <event widget="qMRMLScreenShotDialog/nameEdit" command="set_string" arguments="Full layout test tit"/>
+        <event widget="qMRMLScreenShotDialog/nameEdit" command="set_string" arguments="Full layout test titl"/>
+        <event widget="qMRMLScreenShotDialog/nameEdit" command="set_string" arguments="Full layout test title"/>
+        <event widget="qMRMLScreenShotDialog/buttonBox/1QPushButton0" command="activate" arguments=""/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_viewport/scrollAreaWidgetContents/qSlicerSceneViewsModule/CTKCollapsibleButton/CTKCollapsibleGroupBox_3/sceneView" command="activate" arguments=""/>
+        <event widget="qMRMLScreenShotDialog/threeDViewRadio" command="set_boolean" arguments="true"/>
+        <event widget="qMRMLScreenShotDialog/nameEdit" command="key" arguments="16777248"/>
+        <event widget="qMRMLScreenShotDialog/nameEdit" command="set_string" arguments="3"/>
+        <event widget="qMRMLScreenShotDialog/nameEdit" command="key" arguments="16777248"/>
+        <event widget="qMRMLScreenShotDialog/nameEdit" command="set_string" arguments="3D"/>
+        <event widget="qMRMLScreenShotDialog/nameEdit" command="key" arguments="32"/>
+        <event widget="qMRMLScreenShotDialog/nameEdit" command="set_string" arguments="3D v"/>
+        <event widget="qMRMLScreenShotDialog/nameEdit" command="set_string" arguments="3D vi"/>
+        <event widget="qMRMLScreenShotDialog/nameEdit" command="set_string" arguments="3D view"/>
+        <event widget="qMRMLScreenShotDialog/nameEdit" command="set_string" arguments="3D view"/>
+        <event widget="qMRMLScreenShotDialog/nameEdit" command="key" arguments="32"/>
+        <event widget="qMRMLScreenShotDialog/nameEdit" command="set_string" arguments="3D view t"/>
+        <event widget="qMRMLScreenShotDialog/nameEdit" command="set_string" arguments="3D view ti"/>
+        <event widget="qMRMLScreenShotDialog/nameEdit" command="set_string" arguments="3D view tit"/>
+        <event widget="qMRMLScreenShotDialog/nameEdit" command="set_string" arguments="3D view titl"/>
+        <event widget="qMRMLScreenShotDialog/nameEdit" command="set_string" arguments="3D view title"/>
+        <event widget="qMRMLScreenShotDialog/nameEdit" command="key" arguments="16777234"/>
+        <event widget="qMRMLScreenShotDialog/nameEdit" command="key" arguments="16777234"/>
+        <event widget="qMRMLScreenShotDialog/nameEdit" command="key" arguments="16777234"/>
+        <event widget="qMRMLScreenShotDialog/nameEdit" command="key" arguments="16777248"/>
+        <event widget="qMRMLScreenShotDialog/nameEdit" command="key" arguments="16777249"/>
+        <event widget="qMRMLScreenShotDialog/nameEdit" command="key" arguments="16777249"/>
+        <event widget="qMRMLScreenShotDialog/nameEdit" command="set_string" arguments="3D view title"/>
+        <event widget="qMRMLScreenShotDialog/descriptionTextEdit/qt_scrollarea_viewport" command="mousePress" arguments="1,1,0,61,30"/>
+        <event widget="qMRMLScreenShotDialog/descriptionTextEdit/qt_scrollarea_viewport" command="mouseRelease" arguments="1,0,0,61,30"/>
+        <event widget="qMRMLScreenShotDialog/descriptionTextEdit" command="key" arguments="16777249"/>
+        <event widget="qMRMLScreenShotDialog/descriptionTextEdit" command="set_string" arguments="3D view title"/>
+        <event widget="qMRMLScreenShotDialog/buttonBox/1QPushButton0" command="activate" arguments=""/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_viewport/scrollAreaWidgetContents/qSlicerSceneViewsModule/CTKCollapsibleButton/CTKCollapsibleGroupBox_3/sceneView" command="activate" arguments=""/>
+        <event widget="qMRMLScreenShotDialog/redSliceViewRadio" command="set_boolean" arguments="true"/>
+        <event widget="qMRMLScreenShotDialog/nameEdit" command="set_string" arguments="re"/>
+        <event widget="qMRMLScreenShotDialog/nameEdit" command="set_string" arguments="re"/>
+        <event widget="qMRMLScreenShotDialog/nameEdit" command="set_string" arguments="red"/>
+        <event widget="qMRMLScreenShotDialog/nameEdit" command="key" arguments="32"/>
+        <event widget="qMRMLScreenShotDialog/nameEdit" command="set_string" arguments="red v"/>
+        <event widget="qMRMLScreenShotDialog/nameEdit" command="set_string" arguments="red vie"/>
+        <event widget="qMRMLScreenShotDialog/nameEdit" command="set_string" arguments="red view"/>
+        <event widget="qMRMLScreenShotDialog/nameEdit" command="set_string" arguments="red view"/>
+        <event widget="qMRMLScreenShotDialog/nameEdit" command="key" arguments="32"/>
+        <event widget="qMRMLScreenShotDialog/nameEdit" command="set_string" arguments="red view t"/>
+        <event widget="qMRMLScreenShotDialog/nameEdit" command="set_string" arguments="red view ti"/>
+        <event widget="qMRMLScreenShotDialog/nameEdit" command="set_string" arguments="red view tit"/>
+        <event widget="qMRMLScreenShotDialog/nameEdit" command="set_string" arguments="red view title"/>
+        <event widget="qMRMLScreenShotDialog/nameEdit" command="set_string" arguments="red view title"/>
+        <event widget="qMRMLScreenShotDialog/descriptionTextEdit/qt_scrollarea_viewport" command="mousePress" arguments="1,1,0,97,21"/>
+        <event widget="qMRMLScreenShotDialog/descriptionTextEdit/qt_scrollarea_viewport" command="mouseRelease" arguments="1,0,0,97,21"/>
+        <event widget="qMRMLScreenShotDialog/descriptionTextEdit" command="key" arguments="16777248"/>
+        <event widget="qMRMLScreenShotDialog/descriptionTextEdit" command="set_string" arguments="Re"/>
+        <event widget="qMRMLScreenShotDialog/descriptionTextEdit" command="set_string" arguments="Re"/>
+        <event widget="qMRMLScreenShotDialog/descriptionTextEdit" command="set_string" arguments="Red"/>
+        <event widget="qMRMLScreenShotDialog/descriptionTextEdit" command="key" arguments="32"/>
+        <event widget="qMRMLScreenShotDialog/descriptionTextEdit" command="set_string" arguments="Red v"/>
+        <event widget="qMRMLScreenShotDialog/descriptionTextEdit" command="set_string" arguments="Red vi"/>
+        <event widget="qMRMLScreenShotDialog/descriptionTextEdit" command="set_string" arguments="Red view"/>
+        <event widget="qMRMLScreenShotDialog/descriptionTextEdit" command="set_string" arguments="Red view"/>
+        <event widget="qMRMLScreenShotDialog/descriptionTextEdit" command="key" arguments="32"/>
+        <event widget="qMRMLScreenShotDialog/descriptionTextEdit" command="set_string" arguments="Red view t"/>
+        <event widget="qMRMLScreenShotDialog/descriptionTextEdit" command="set_string" arguments="Red view ti"/>
+        <event widget="qMRMLScreenShotDialog/descriptionTextEdit" command="set_string" arguments="Red view tit"/>
+        <event widget="qMRMLScreenShotDialog/descriptionTextEdit" command="set_string" arguments="Red view title"/>
+        <event widget="qMRMLScreenShotDialog/descriptionTextEdit" command="set_string" arguments="Red view title"/>
+        <event widget="qMRMLScreenShotDialog/descriptionTextEdit" command="key" arguments="16777219"/>
+        <event widget="qMRMLScreenShotDialog/descriptionTextEdit" command="key" arguments="16777219"/>
+        <event widget="qMRMLScreenShotDialog/descriptionTextEdit" command="key" arguments="16777219"/>
+        <event widget="qMRMLScreenShotDialog/descriptionTextEdit" command="key" arguments="16777219"/>
+        <event widget="qMRMLScreenShotDialog/descriptionTextEdit" command="key" arguments="16777219"/>
+        <event widget="qMRMLScreenShotDialog/buttonBox/1QPushButton0" command="activate" arguments=""/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_viewport/scrollAreaWidgetContents/qSlicerSceneViewsModule/CTKCollapsibleButton/CTKCollapsibleGroupBox_3/hierarchyTreeView" command="setCurrent" arguments="0.0.0.0.0.0"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_viewport/scrollAreaWidgetContents/qSlicerSceneViewsModule/CTKCollapsibleButton/CTKCollapsibleGroupBox_3/hierarchyTreeView" command="setCurrent" arguments="0.0.0.0.0.1"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_viewport/scrollAreaWidgetContents/qSlicerSceneViewsModule/CTKCollapsibleButton/CTKCollapsibleGroupBox_3/hierarchyTreeView" command="expand" arguments="0.0.0.0"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_viewport/scrollAreaWidgetContents/qSlicerSceneViewsModule/CTKCollapsibleButton/CTKCollapsibleGroupBox_3/hierarchyTreeView" command="expand" arguments="0.0"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_viewport/scrollAreaWidgetContents/qSlicerSceneViewsModule/CTKCollapsibleButton/CTKCollapsibleGroupBox_3/hierarchyTreeView" command="setCurrent" arguments="0.0.0.0.1.2"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_viewport/scrollAreaWidgetContents/qSlicerSceneViewsModule/CTKCollapsibleButton/CTKCollapsibleGroupBox_3/moveUpSelectedButton" command="activate" arguments=""/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_viewport/scrollAreaWidgetContents/qSlicerSceneViewsModule/CTKCollapsibleButton/CTKCollapsibleGroupBox_3/hierarchyTreeView" command="setCurrent" arguments="0.0.0.0.2.2"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_viewport/scrollAreaWidgetContents/qSlicerSceneViewsModule/CTKCollapsibleButton/CTKCollapsibleGroupBox_3/hierarchyTreeView" command="setCurrent" arguments="0.0.0.0.0.0"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_viewport/scrollAreaWidgetContents/qSlicerSceneViewsModule/CTKCollapsibleButton/CTKCollapsibleGroupBox_3/hierarchyTreeView" command="setCurrent" arguments="0.0.0.0.2.2"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_viewport/scrollAreaWidgetContents/qSlicerSceneViewsModule/CTKCollapsibleButton/CTKCollapsibleGroupBox_3/moveUpSelectedButton" command="activate" arguments=""/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_viewport/scrollAreaWidgetContents/qSlicerSceneViewsModule/CTKCollapsibleButton/CTKCollapsibleGroupBox_3/hierarchyTreeView" command="setCurrent" arguments="0.0.0.0.1.2"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_viewport/scrollAreaWidgetContents/qSlicerSceneViewsModule/CTKCollapsibleButton/CTKCollapsibleGroupBox_3/hierarchyTreeView" command="setCurrent" arguments="0.0.0.0.1.0"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_viewport/scrollAreaWidgetContents/qSlicerSceneViewsModule/CTKCollapsibleButton/CTKCollapsibleGroupBox_3/moveUpSelectedButton" command="activate" arguments=""/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_viewport/scrollAreaWidgetContents/qSlicerSceneViewsModule/CTKCollapsibleButton/CTKCollapsibleGroupBox_3/hierarchyTreeView" command="setCurrent" arguments="0.0.0.0.2.0"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_viewport/scrollAreaWidgetContents/qSlicerSceneViewsModule/CTKCollapsibleButton/CTKCollapsibleGroupBox_3/hierarchyTreeView" command="setCurrent" arguments="0.0.0.0.0.0"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_viewport/scrollAreaWidgetContents/qSlicerSceneViewsModule/CTKCollapsibleButton/CTKCollapsibleGroupBox_3/hierarchyTreeView" command="setCurrent" arguments="0.0.0.0.1.2"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_viewport/scrollAreaWidgetContents/qSlicerSceneViewsModule/CTKCollapsibleButton/CTKCollapsibleGroupBox_3/deleteSelectedButton" command="activate" arguments=""/>
+        <event widget="1QMessageBox0/qt_msgbox_buttonbox/1QPushButton0" command="activate" arguments=""/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_viewport/scrollAreaWidgetContents/qSlicerSceneViewsModule/CTKCollapsibleButton/CTKCollapsibleGroupBox_3/hierarchyTreeView" command="setCurrent" arguments="0.0.0.0.2.2"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_viewport/scrollAreaWidgetContents/qSlicerSceneViewsModule/CTKCollapsibleButton/CTKCollapsibleGroupBox_3/hierarchyTreeView" command="setCurrent" arguments="0.0.0.0.0.2"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_viewport/scrollAreaWidgetContents/qSlicerSceneViewsModule/CTKCollapsibleButton/CTKCollapsibleGroupBox_3/hierarchyTreeView" command="setCurrent" arguments="0.0.0.0.0.1"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_viewport/scrollAreaWidgetContents/qSlicerSceneViewsModule/CTKCollapsibleButton/CTKCollapsibleGroupBox_3/hierarchyTreeView" command="expand" arguments="0.0.0.0"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_viewport/scrollAreaWidgetContents/qSlicerSceneViewsModule/CTKCollapsibleButton/CTKCollapsibleGroupBox_3/hierarchyTreeView" command="expand" arguments="0.0"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_viewport/scrollAreaWidgetContents/qSlicerSceneViewsModule/CTKCollapsibleButton/CTKCollapsibleGroupBox_3/hierarchyTreeView" command="setCurrent" arguments="0.0.0.0.0.2"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_viewport/scrollAreaWidgetContents/qSlicerSceneViewsModule/CTKCollapsibleButton/CTKCollapsibleGroupBox_3/hierarchyTreeView/qt_scrollarea_viewport/1QExpandingLineEdit0" command="key" arguments="16777219"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_viewport/scrollAreaWidgetContents/qSlicerSceneViewsModule/CTKCollapsibleButton/CTKCollapsibleGroupBox_3/hierarchyTreeView/qt_scrollarea_viewport/1QExpandingLineEdit0" command="set_string" arguments="c"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_viewport/scrollAreaWidgetContents/qSlicerSceneViewsModule/CTKCollapsibleButton/CTKCollapsibleGroupBox_3/hierarchyTreeView/qt_scrollarea_viewport/1QExpandingLineEdit0" command="set_string" arguments="ch"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_viewport/scrollAreaWidgetContents/qSlicerSceneViewsModule/CTKCollapsibleButton/CTKCollapsibleGroupBox_3/hierarchyTreeView/qt_scrollarea_viewport/1QExpandingLineEdit0" command="set_string" arguments="cha"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_viewport/scrollAreaWidgetContents/qSlicerSceneViewsModule/CTKCollapsibleButton/CTKCollapsibleGroupBox_3/hierarchyTreeView/qt_scrollarea_viewport/1QExpandingLineEdit0" command="set_string" arguments="chan"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_viewport/scrollAreaWidgetContents/qSlicerSceneViewsModule/CTKCollapsibleButton/CTKCollapsibleGroupBox_3/hierarchyTreeView/qt_scrollarea_viewport/1QExpandingLineEdit0" command="set_string" arguments="chang"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_viewport/scrollAreaWidgetContents/qSlicerSceneViewsModule/CTKCollapsibleButton/CTKCollapsibleGroupBox_3/hierarchyTreeView/qt_scrollarea_viewport/1QExpandingLineEdit0" command="set_string" arguments="change"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_viewport/scrollAreaWidgetContents/qSlicerSceneViewsModule/CTKCollapsibleButton/CTKCollapsibleGroupBox_3/hierarchyTreeView/qt_scrollarea_viewport/1QExpandingLineEdit0" command="key" arguments="32"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_viewport/scrollAreaWidgetContents/qSlicerSceneViewsModule/CTKCollapsibleButton/CTKCollapsibleGroupBox_3/hierarchyTreeView/qt_scrollarea_viewport/1QExpandingLineEdit0" command="set_string" arguments="change te"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_viewport/scrollAreaWidgetContents/qSlicerSceneViewsModule/CTKCollapsibleButton/CTKCollapsibleGroupBox_3/hierarchyTreeView/qt_scrollarea_viewport/1QExpandingLineEdit0" command="set_string" arguments="change te"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_viewport/scrollAreaWidgetContents/qSlicerSceneViewsModule/CTKCollapsibleButton/CTKCollapsibleGroupBox_3/hierarchyTreeView/qt_scrollarea_viewport/1QExpandingLineEdit0" command="set_string" arguments="change texz"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_viewport/scrollAreaWidgetContents/qSlicerSceneViewsModule/CTKCollapsibleButton/CTKCollapsibleGroupBox_3/hierarchyTreeView/qt_scrollarea_viewport/1QExpandingLineEdit0" command="set_string" arguments="change texz"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_viewport/scrollAreaWidgetContents/qSlicerSceneViewsModule/CTKCollapsibleButton/CTKCollapsibleGroupBox_3/hierarchyTreeView/qt_scrollarea_viewport/1QExpandingLineEdit0" command="key" arguments="16777219"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_viewport/scrollAreaWidgetContents/qSlicerSceneViewsModule/CTKCollapsibleButton/CTKCollapsibleGroupBox_3/hierarchyTreeView/qt_scrollarea_viewport/1QExpandingLineEdit0" command="set_string" arguments="change text"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_viewport/scrollAreaWidgetContents/qSlicerSceneViewsModule/CTKCollapsibleButton/CTKCollapsibleGroupBox_3/hierarchyTreeView" command="setCurrent" arguments="0.0.0.0.1.2"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_viewport/scrollAreaWidgetContents/qSlicerSceneViewsModule/CTKCollapsibleButton/CTKCollapsibleGroupBox_3/hierarchyTreeView" command="setCurrent" arguments="0.0.0.0.0.3"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_viewport/scrollAreaWidgetContents/qSlicerSceneViewsModule/CTKCollapsibleButton/CTKCollapsibleGroupBox_3/hierarchyTreeView/qt_scrollarea_viewport/1QExpandingLineEdit0" command="set_string" arguments="c"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_viewport/scrollAreaWidgetContents/qSlicerSceneViewsModule/CTKCollapsibleButton/CTKCollapsibleGroupBox_3/hierarchyTreeView/qt_scrollarea_viewport/1QExpandingLineEdit0" command="set_string" arguments="ch"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_viewport/scrollAreaWidgetContents/qSlicerSceneViewsModule/CTKCollapsibleButton/CTKCollapsibleGroupBox_3/hierarchyTreeView/qt_scrollarea_viewport/1QExpandingLineEdit0" command="set_string" arguments="cha"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_viewport/scrollAreaWidgetContents/qSlicerSceneViewsModule/CTKCollapsibleButton/CTKCollapsibleGroupBox_3/hierarchyTreeView/qt_scrollarea_viewport/1QExpandingLineEdit0" command="set_string" arguments="chan"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_viewport/scrollAreaWidgetContents/qSlicerSceneViewsModule/CTKCollapsibleButton/CTKCollapsibleGroupBox_3/hierarchyTreeView/qt_scrollarea_viewport/1QExpandingLineEdit0" command="set_string" arguments="chang"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_viewport/scrollAreaWidgetContents/qSlicerSceneViewsModule/CTKCollapsibleButton/CTKCollapsibleGroupBox_3/hierarchyTreeView/qt_scrollarea_viewport/1QExpandingLineEdit0" command="set_string" arguments="change"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_viewport/scrollAreaWidgetContents/qSlicerSceneViewsModule/CTKCollapsibleButton/CTKCollapsibleGroupBox_3/hierarchyTreeView/qt_scrollarea_viewport/1QExpandingLineEdit0" command="key" arguments="32"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_viewport/scrollAreaWidgetContents/qSlicerSceneViewsModule/CTKCollapsibleButton/CTKCollapsibleGroupBox_3/hierarchyTreeView/qt_scrollarea_viewport/1QExpandingLineEdit0" command="set_string" arguments="change de"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_viewport/scrollAreaWidgetContents/qSlicerSceneViewsModule/CTKCollapsibleButton/CTKCollapsibleGroupBox_3/hierarchyTreeView/qt_scrollarea_viewport/1QExpandingLineEdit0" command="set_string" arguments="change de"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_viewport/scrollAreaWidgetContents/qSlicerSceneViewsModule/CTKCollapsibleButton/CTKCollapsibleGroupBox_3/hierarchyTreeView/qt_scrollarea_viewport/1QExpandingLineEdit0" command="set_string" arguments="change des"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_viewport/scrollAreaWidgetContents/qSlicerSceneViewsModule/CTKCollapsibleButton/CTKCollapsibleGroupBox_3/hierarchyTreeView/qt_scrollarea_viewport/1QExpandingLineEdit0" command="set_string" arguments="change desc"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_viewport/scrollAreaWidgetContents/qSlicerSceneViewsModule/CTKCollapsibleButton/CTKCollapsibleGroupBox_3/hierarchyTreeView/qt_scrollarea_viewport/1QExpandingLineEdit0" command="set_string" arguments="change descr"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_viewport/scrollAreaWidgetContents/qSlicerSceneViewsModule/CTKCollapsibleButton/CTKCollapsibleGroupBox_3/hierarchyTreeView/qt_scrollarea_viewport/1QExpandingLineEdit0" command="set_string" arguments="change descri"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_viewport/scrollAreaWidgetContents/qSlicerSceneViewsModule/CTKCollapsibleButton/CTKCollapsibleGroupBox_3/hierarchyTreeView/qt_scrollarea_viewport/1QExpandingLineEdit0" command="set_string" arguments="change descrip"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_viewport/scrollAreaWidgetContents/qSlicerSceneViewsModule/CTKCollapsibleButton/CTKCollapsibleGroupBox_3/hierarchyTreeView/qt_scrollarea_viewport/1QExpandingLineEdit0" command="set_string" arguments="change descript"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_viewport/scrollAreaWidgetContents/qSlicerSceneViewsModule/CTKCollapsibleButton/CTKCollapsibleGroupBox_3/hierarchyTreeView/qt_scrollarea_viewport/1QExpandingLineEdit0" command="set_string" arguments="change descriptio"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_viewport/scrollAreaWidgetContents/qSlicerSceneViewsModule/CTKCollapsibleButton/CTKCollapsibleGroupBox_3/hierarchyTreeView/qt_scrollarea_viewport/1QExpandingLineEdit0" command="set_string" arguments="change description"/>
+        <event widget="qSlicerMainWindow/PanelDockWidget/dockWidgetContents/ModulePanel/ScrollArea/qt_scrollarea_viewport/scrollAreaWidgetContents/qSlicerSceneViewsModule/CTKCollapsibleButton/CTKCollapsibleGroupBox_3/hierarchyTreeView/qt_scrollarea_viewport/1QExpandingLineEdit0" command="set_string" arguments="change description"/>
+    </events>
+</xml>

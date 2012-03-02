@@ -25,6 +25,8 @@
 #include <QObject>
 #include <QPointer>
 
+#include "vtkSlicerConfigure.h" // For Slicer_USE_QtTesting
+
 // CTK includes
 #include <ctkErrorLogWidget.h>
 

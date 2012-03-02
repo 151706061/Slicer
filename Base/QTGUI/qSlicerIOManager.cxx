@@ -194,7 +194,8 @@ bool qSlicerIOManager::openDialog(qSlicerIO::IOFileType fileType,
     }
   bool res = dialog->exec(properties);
   if (deleteDialog)
-   {
+    {
+    qDebug() << "delete dialog";
     delete dialog;
     }
   return res;

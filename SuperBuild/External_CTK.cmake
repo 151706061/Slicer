@@ -52,8 +52,8 @@ if(NOT DEFINED CTK_DIR)
   endif()
 
   ExternalProject_Add(${proj}
-    GIT_REPOSITORY "${git_protocol}://github.com/commontk/CTK.git"
-    GIT_TAG "c1c4937f9fd2d0dfb87d35463508143b1f547d1e"
+    GIT_REPOSITORY "${git_protocol}://github.com/benjaminlong/CTK.git"
+    GIT_TAG "9ff1f45f8161e62a94ed8f2b47afcbe7553dfce0"
     SOURCE_DIR ${CMAKE_BINARY_DIR}/${proj}
     BINARY_DIR ${proj}-build
     UPDATE_COMMAND ""
@@ -78,6 +78,7 @@ if(NOT DEFINED CTK_DIR)
       -DCTK_LIB_PluginFramework:BOOL=OFF
       -DCTK_PLUGIN_org.commontk.eventbus:BOOL=OFF
       -DCTK_APP_ctkDICOM:BOOL=ON
+      -DCTK_USE_QTTESTING:BOOL=${Slicer_USE_QtTesting}
       -DGIT_EXECUTABLE:FILEPATH=${GIT_EXECUTABLE}
       ${optional_ep_args}
     INSTALL_COMMAND ""

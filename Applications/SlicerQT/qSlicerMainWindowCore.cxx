@@ -29,7 +29,10 @@
 // CTK includes
 #include <ctkMessageBox.h>
 #ifdef Slicer_USE_PYTHONQT
-#include <ctkPythonConsole.h>
+# include <ctkPythonConsole.h>
+#endif
+#ifdef Slicer_USE_QtTesting
+# include <ctkQtTestingUtility.h>
 #endif
 
 
@@ -38,6 +41,9 @@
 #include "qSlicerAboutDialog.h"
 #include "qSlicerActionsDialog.h"
 #include "qSlicerApplication.h"
+#ifdef Slicer_USE_QtTesting
+#include "qSlicerCLIModuleWidgetEventPlayer.h"
+#endif
 #include "qSlicerIOManager.h"
 #include "qSlicerLayoutManager.h"
 #include "qSlicerMainWindowCore_p.h"
@@ -81,7 +87,7 @@ qSlicerMainWindowCore::qSlicerMainWindowCore(qSlicerMainWindow* _parent):Supercl
   , d_ptr(new qSlicerMainWindowCorePrivate)
 {
   Q_D(qSlicerMainWindowCore);
-  
+
   d->ParentWidget = _parent;
   d->ErrorLogWidget.setErrorLogModel(qSlicerCoreApplication::application()->errorLogModel());
 }
@@ -215,6 +221,35 @@ void qSlicerMainWindowCore::onSDBZipToDCMActionTriggered()
 void qSlicerMainWindowCore::onFileCloseSceneActionTriggered()
 {
   qSlicerCoreApplication::application()->mrmlScene()->Clear(false);
+}
+
+//---------------------------------------------------------------------------
+void qSlicerMainWindowCore::onEditRecordMacroActionTriggered()
+{
+#ifdef Slicer_USE_QtTesting
+  QString filename = QFileDialog::getSaveFileName(this->widget(), "Macro File Name",
+    QString(), "XML Files (*.xml)");
+  if (!filename.isEmpty())
+    {
+    qSlicerApplication::application()->testingUtility()->recordTests(filename);
+    }
+#endif
+}
+
+//---------------------------------------------------------------------------
+void qSlicerMainWindowCore::onEditPlayMacroActionTriggered()
+{
+#ifdef Slicer_USE_QtTesting
+  qSlicerApplication::application()->testingUtility()->addPlayer(
+        new qSlicerCLIModuleWidgetEventPlayer());
+  qSlicerApplication::application()->testingUtility()->openPlayerDialog();
+//  QString filename = QFileDialog::getOpenFileName(this->widget(), "Test File Name",
+//    QString(), "XML Files (*.xml)");
+//  if (!filename.isEmpty())
+//    {
+//    d->TestUtility.playTests(filename);
+//    }
+#endif
 }
 
 //---------------------------------------------------------------------------

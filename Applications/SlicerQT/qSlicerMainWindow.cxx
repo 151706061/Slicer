@@ -37,6 +37,7 @@
 #include "ui_qSlicerMainWindow.h"
 #include "qSlicerApplication.h" // Indirectly includes vtkSlicerConfigure.h
 #include "qSlicerAbstractModule.h"
+#include "qSlicerCommandOptions.h"
 #include "qSlicerCoreCommandOptions.h"
 #ifdef Slicer_BUILD_EXTENSIONMANAGER_SUPPORT
 # include "qSlicerExtensionsManagerDialog.h"
@@ -227,6 +228,7 @@ void qSlicerMainWindowPrivate::setupUi(QMainWindow * mainWindow)
 
   // Add menus for configuring compare view
   QMenu *compareMenu = new QMenu(q->tr("Select number of viewers..."));
+  compareMenu->setObjectName("CompareMenuView");
   compareMenu->addAction(this->actionViewLayoutCompare_2_viewers);
   compareMenu->addAction(this->actionViewLayoutCompare_3_viewers);
   compareMenu->addAction(this->actionViewLayoutCompare_4_viewers);
@@ -240,6 +242,7 @@ void qSlicerMainWindowPrivate::setupUi(QMainWindow * mainWindow)
 
   // ... and for widescreen version of compare view as well
   compareMenu = new QMenu(q->tr("Select number of viewers..."));
+  compareMenu->setObjectName("CompareMenuWideScreen");
   compareMenu->addAction(this->actionViewLayoutCompareWidescreen_2_viewers);
   compareMenu->addAction(this->actionViewLayoutCompareWidescreen_3_viewers);
   compareMenu->addAction(this->actionViewLayoutCompareWidescreen_4_viewers);
@@ -253,6 +256,7 @@ void qSlicerMainWindowPrivate::setupUi(QMainWindow * mainWindow)
 
   // ... and for the grid version of the compare views
   compareMenu = new QMenu(q->tr("Select number of viewers..."));
+  compareMenu->setObjectName("CompareMenuGrid");
   compareMenu->addAction(this->actionViewLayoutCompareGrid_2x2_viewers);
   compareMenu->addAction(this->actionViewLayoutCompareGrid_3x3_viewers);
   compareMenu->addAction(this->actionViewLayoutCompareGrid_4x4_viewers);
@@ -327,6 +331,16 @@ void qSlicerMainWindowPrivate::setupUi(QMainWindow * mainWindow)
   this->actionHelpReportBugOrFeatureRequest->setIcon(questionIcon);
   this->actionHelpVisualBlog->setIcon(networkIcon);
 
+  //----------------------------------------------------------------------------
+  // Update UI considering build options
+  //----------------------------------------------------------------------------
+#ifdef Slicer_USE_QtTesting
+  if (qSlicerApplication::application()->commandOptions()->enableQtTesting())
+    {
+    this->actionEditPlayMacro->setVisible(true);
+    this->actionEditRecordMacro->setVisible(true);
+    }
+#endif
 #ifdef Slicer_BUILD_EXTENSIONMANAGER_SUPPORT
   this->ExtensionsManagerDialog = new qSlicerExtensionsManagerDialog(q);
 #endif
@@ -524,6 +538,9 @@ void qSlicerMainWindow::setupMenuActions()
   this->connect(d->actionFileExit, SIGNAL(triggered()),
                 this, SLOT(close()));
 
+
+  qSlicerMainWindowCore_connect(EditRecordMacro);
+  qSlicerMainWindowCore_connect(EditPlayMacro);
   qSlicerMainWindowCore_connect(EditUndo);
   qSlicerMainWindowCore_connect(EditRedo);
 
@@ -690,6 +707,7 @@ void qSlicerMainWindow::onModuleLoaded(const QString& moduleName)
         }
       }
     d->ModuleToolBar->insertAction(beforeAction, action);
+    action->setParent(d->ModuleToolBar);
     }
 }
 
