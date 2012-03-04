@@ -6,12 +6,16 @@ if(${CMAKE_CURRENT_LIST_FILENAME}_FILE_INCLUDED)
 endif()
 set(${CMAKE_CURRENT_LIST_FILENAME}_FILE_INCLUDED 1)
 
-# Set dependency list
-set(LibArchive_DEPENDENCIES "")
-
-# Include dependent projects if any
-SlicerMacroCheckExternalProjectDependency(LibArchive)
 set(proj LibArchive)
+
+# Set dependency list
+set(${proj}_DEPENDENCIES "")
+if(WIN32)
+  #list(APPEND ${proj}_DEPENDENCIES VTK)
+  list(APPEND ${proj}_DEPENDENCIES zlib)
+  endif()
+# Include dependent projects if any
+SlicerMacroCheckExternalProjectDependency(${proj})
 
 if(NOT DEFINED LibArchive_DIR)
   #message(STATUS "${__indent}Adding project ${proj}")
@@ -70,6 +74,13 @@ if(NOT DEFINED LibArchive_DIR)
     list(APPEND ADDITIONAL_CMAKE_ARGS
       -DBUILD_TESTING:BOOL=OFF
       -DENABLE_OPENSSL:BOOL=OFF
+      #-DZLIB_INCLUDE_DIR:PATH=${VTK_SOURCE_DIR}/Utilities/vtkzlib
+      #-DZLIB_LIBRARY:FILEPATH=${VTK_DIR}/bin/${CMAKE_CFG_INTDIR}/vtkzlib.lib
+      #-DCMAKE_C_IMPLICIT_INCLUDE_DIRECTORIES:PATH=${VTK_DIR}/Utilities
+      #-DCMAKE_C_COMPILER_INCLUDE_DIRECTORIES:PATH=${VTK_DIR}/Utilities
+      -DZLIB_INCLUDE_DIR:PATH=${zlib_DIR}
+      -DZLIB_LIBRARY:FILEPATH=${zlib_DIR}/zlib.lib
+      -DZLIB_ROOT:PATH=${zlib_DIR}
       )
   else()
     set(LibArchive_URL http://svn.slicer.org/Slicer3-lib-mirrors/trunk/libarchive-2.7.1-patched.tar.gz)
