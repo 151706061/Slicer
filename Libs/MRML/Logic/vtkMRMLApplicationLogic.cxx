@@ -678,7 +678,7 @@ const char * vtkMRMLApplicationLogic::Zip(const char *zipFileName, const char *t
   archive_write_set_format_zip(a);
 
 #if defined(ARCHIVE_VERSION_NUMBER) && ARCHIVE_VERSION_NUMBER >= 3000000
-  archive_write_set_format_options(a, "zip", "compression", compression_type.c_str());
+  archive_write_set_format_option(a, "zip", "compression", compression_type.c_str());
 #else
   compression_type = "zip:compression=" + compression_type;
   archive_write_set_format_options(a, compression_type.c_str());
