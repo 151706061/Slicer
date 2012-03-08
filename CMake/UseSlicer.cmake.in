@@ -34,6 +34,9 @@ foreach(proj ${Slicer_EXTERNAL_PROJECTS})
   endif()
 endforeach()
 
+# Set QtTesting 'DIR' variable so that find_package(QtTesting) works as expected.
+set(QtTesting_INSTALL_DIR ${CTK_QtTesting_INSTALL_DIR})
+
 # Set PythonQt 'DIR' variable so that find_package(PythonQt) works as expected.
 set(PYTHONQT_INSTALL_DIR ${CTK_PYTHONQT_INSTALL_DIR})
 
