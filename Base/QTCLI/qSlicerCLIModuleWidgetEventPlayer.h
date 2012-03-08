@@ -24,7 +24,10 @@
 // QtTesting includes
 #include <pqWidgetEventPlayer.h>
 
-class qSlicerCLIModuleWidgetEventPlayer : public pqWidgetEventPlayer
+// QtCLI includes
+#include "qSlicerBaseQTCLIExport.h"
+
+class Q_SLICER_BASE_QTCLI_EXPORT qSlicerCLIModuleWidgetEventPlayer : public pqWidgetEventPlayer
 {
   Q_OBJECT
 
