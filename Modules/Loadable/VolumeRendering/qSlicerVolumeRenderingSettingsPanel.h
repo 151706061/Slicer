@@ -34,6 +34,7 @@ class Q_SLICER_QTMODULES_VOLUMERENDERING_EXPORT qSlicerVolumeRenderingSettingsPa
 {
   Q_OBJECT
   Q_PROPERTY(int gpuMemory READ gpuMemory WRITE setGPUMemory NOTIFY gpuMemoryChanged)
+  Q_PROPERTY(QString defaultRenderingMethod READ defaultRenderingMethod WRITE setDefaultRenderingMethod NOTIFY defaultRenderingMethodChanged)
 public:
   /// Superclass typedef
   typedef ctkSettingsPanel Superclass;
@@ -44,6 +45,8 @@ public:
   /// Destructor
   virtual ~qSlicerVolumeRenderingSettingsPanel();
 
+  void addRenderingMethod(const QString& methodName, const QString& methodClassName);
+
   /// Volume rendering logic is synchronized with the settings.
   /// \sa vtkSlicerVolumeRenderingLogic::SetDefaultRenderingMethod
   void setVolumeRenderingLogic(vtkSlicerVolumeRenderingLogic* logic);
@@ -52,11 +55,15 @@ public:
   int gpuMemory()const;
   void setGPUMemory(int gpuMemory);
 
+  QString defaultRenderingMethod()const;
+  void setDefaultRenderingMethod(const QString& method);
 signals:
   void gpuMemoryChanged(int);
+  void defaultRenderingMethodChanged(const QString&);
 
 protected slots:
   void onGPUMemoryChanged();
+  void onDefaultRenderingMethodChanged(int);
   void updateVolumeRenderingLogicDefaultRenderingMethod();
 
 protected:

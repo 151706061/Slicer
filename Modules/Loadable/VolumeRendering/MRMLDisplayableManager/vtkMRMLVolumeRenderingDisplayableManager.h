@@ -19,6 +19,12 @@ class vtkSlicerGPURayCastVolumeMapper;
 class vtkSlicerGPURayCastMultiVolumeMapper;
 class vtkGPUVolumeRayCastMapper;
 
+class vtkMRMLCPURayCastVolumeRenderingDisplayNode;
+class vtkMRMLNCIRayCastVolumeRenderingDisplayNode;
+class vtkMRMLNCIMultiVolumeRayCastVolumeRenderingDisplayNode;
+class vtkMRMLGPUTextureMappingVolumeRenderingDisplayNode;
+class vtkMRMLGPURayCastVolumeRenderingDisplayNode;
+
 class vtkIntArray;
 class vtkMatrix4x4;
 class vtkPlanes;
@@ -75,18 +81,25 @@ public:
   void SetupHistograms(vtkMRMLVolumeRenderingDisplayNode* vspNode);
   //vtkKWHistogramSet* GetHistogramSet(){return this->Histograms;}
 
-  void SetupHistogramsFg(vtkMRMLVolumeRenderingDisplayNode* vspNode);
+  void SetupHistogramsFg(vtkMRMLNCIMultiVolumeRayCastVolumeRenderingDisplayNode* vspNode);
   //vtkKWHistogramSet* GetHistogramSetFg(){return this->HistogramsFg;}
 
-  void SetExpectedFPS(double fps);
-  void SetCPURaycastParameters(vtkMRMLVolumeRenderingDisplayNode* vspNode);
-  void SetGPURaycastParameters(vtkMRMLVolumeRenderingDisplayNode* vspNode);
-  void SetGPURaycastIIParameters(vtkMRMLVolumeRenderingDisplayNode* vspNode);
-  void SetGPURaycast3Parameters(vtkMRMLVolumeRenderingDisplayNode* vspNode);
-  void SetROI(vtkMRMLVolumeRenderingDisplayNode* vspNode);
+  virtual void UpdateMapper(vtkVolumeMapper* mapper,
+                            vtkMRMLVolumeRenderingDisplayNode* vspNode);
+  void UpdateCPURaycastMapper(vtkFixedPointVolumeRayCastMapper* mapper,
+                              vtkMRMLCPURayCastVolumeRenderingDisplayNode* vspNode);
+  void UpdateNCIRaycastMapper(vtkSlicerGPURayCastVolumeMapper* mapper,
+                              vtkMRMLNCIRayCastVolumeRenderingDisplayNode* vspNode);
+  void UpdateNCIMultiVolumeRaycastMapper(vtkSlicerGPURayCastMultiVolumeMapper* mapper,
+                                         vtkMRMLNCIMultiVolumeRayCastVolumeRenderingDisplayNode* vspNode);
+  void UpdateGPUTextureMappingMapper(vtkSlicerVolumeTextureMapper3D* mapper,
+                                     vtkMRMLGPUTextureMappingVolumeRenderingDisplayNode* vspNode);
+  void UpdateGPURaycastMapper(vtkGPUVolumeRayCastMapper* mapper,
+                              vtkMRMLGPURayCastVolumeRenderingDisplayNode* vspNode);
+  void UpdateDesiredUpdateRate(vtkMRMLVolumeRenderingDisplayNode* vspNode);
+  void UpdateClipping(vtkVolumeMapper* mapper, vtkMRMLVolumeRenderingDisplayNode* vspNode);
 
   void CreateVolumePropertyGPURaycastII(vtkMRMLVolumeRenderingDisplayNode* vspNode);
-  void UpdateVolumePropertyGPURaycastII(vtkMRMLVolumeRenderingDisplayNode* vspNode);
 
   //void CreateVolumePropertyGPURaycast3(vtkMRMLVolumeRenderingDisplayNode* vspNode);
   //void UpdateVolumePropertyGPURaycast3(vtkMRMLVolumeRenderingDisplayNode* vspNode);
@@ -102,6 +115,7 @@ public:
    * 1: mapper supported
    */
   int IsCurrentMapperSupported(vtkMRMLVolumeRenderingDisplayNode* vspNode);
+  int IsMapperSupported(vtkVolumeMapper* volumeMapper, vtkMRMLVolumeRenderingDisplayNode* vspNode);
 
   virtual void OnMRMLSceneStartClose();
   virtual void OnMRMLSceneEndClose();
@@ -202,7 +216,6 @@ protected:
   void OnVolumeRenderingDisplayNodeModified(vtkMRMLVolumeRenderingDisplayNode* dnode);
 
 
-  void ComputeInternalVolumeSize(int index);
   void CalculateMatrix(vtkMRMLVolumeRenderingDisplayNode *vspNode, vtkMatrix4x4 *output);
   void EstimateSampleDistance(vtkMRMLVolumeRenderingDisplayNode* vspNode);
 
@@ -214,6 +227,9 @@ protected:
   bool IsVolumeInView(vtkVolume* volume);
   void UpdatePipelineFromDisplayNode(vtkMRMLVolumeRenderingDisplayNode* vspNode);
   int ValidateDisplayNode(vtkMRMLVolumeRenderingDisplayNode* vspNode);
+  double GetSampleDistance(vtkMRMLVolumeRenderingDisplayNode* vspNode);
+  double GetFramerate(vtkMRMLVolumeRenderingDisplayNode* vspNode);
+  int GetMaxMemory(vtkVolumeMapper* mapper, vtkMRMLVolumeRenderingDisplayNode* vspNode);
 
 };
 

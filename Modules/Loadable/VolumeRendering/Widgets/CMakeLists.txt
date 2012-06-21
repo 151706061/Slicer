@@ -10,21 +10,40 @@ set(${KIT}_INCLUDE_DIRECTORIES
   )
 
 set(${KIT}_SRCS
+  qSlicerCPURayCastVolumeRenderingPropertiesWidget.cxx
+  qSlicerCPURayCastVolumeRenderingPropertiesWidget.h
+  qSlicerGPURayCastVolumeRenderingPropertiesWidget.cxx
+  qSlicerGPURayCastVolumeRenderingPropertiesWidget.h
+  qSlicerNCIRayCastVolumeRenderingPropertiesWidget.cxx
+  qSlicerNCIRayCastVolumeRenderingPropertiesWidget.h
+  qSlicerNCIMultiVolumeRayCastVolumeRenderingPropertiesWidget.cxx
+  qSlicerNCIMultiVolumeRayCastVolumeRenderingPropertiesWidget.h
   qSlicerPresetComboBox.cxx
   qSlicerPresetComboBox.h
   qSlicerPresetComboBox_p.h
+  qSlicerVolumeRenderingPropertiesWidget.cxx
+  qSlicerVolumeRenderingPropertiesWidget.h
   qMRMLVolumePropertyNodeWidget.cxx
   qMRMLVolumePropertyNodeWidget.h
   )
 
 set(${KIT}_MOC_SRCS
+  qSlicerCPURayCastVolumeRenderingPropertiesWidget.h
+  qSlicerGPURayCastVolumeRenderingPropertiesWidget.h
+  qSlicerNCIRayCastVolumeRenderingPropertiesWidget.h
+  qSlicerNCIMultiVolumeRayCastVolumeRenderingPropertiesWidget.h
   qSlicerPresetComboBox.h
   qSlicerPresetComboBox_p.h
+  qSlicerVolumeRenderingPropertiesWidget.h
   qMRMLVolumePropertyNodeWidget.h
   )
 
 set(${KIT}_UI_SRCS
   ../Resources/UI/qMRMLVolumePropertyNodeWidget.ui
+  ../Resources/UI/qSlicerCPURayCastVolumeRenderingPropertiesWidget.ui
+  ../Resources/UI/qSlicerGPURayCastVolumeRenderingPropertiesWidget.ui
+  ../Resources/UI/qSlicerNCIRayCastVolumeRenderingPropertiesWidget.ui
+  ../Resources/UI/qSlicerNCIMultiVolumeRayCastVolumeRenderingPropertiesWidget.ui
   )
 
 set(${KIT}_RESOURCES

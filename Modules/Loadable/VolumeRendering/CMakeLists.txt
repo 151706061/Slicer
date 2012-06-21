@@ -49,19 +49,19 @@ set(MODULE_SRCS
   ${qt_module_displayable_manager_instantiator_SRCS}
   qSlicerVolumeRenderingIO.cxx
   qSlicerVolumeRenderingIO.h
-  qSlicerVolumeRenderingSettingsPanel.cxx
-  qSlicerVolumeRenderingSettingsPanel.h
   qSlicerVolumeRenderingModule.cxx
   qSlicerVolumeRenderingModule.h
   qSlicerVolumeRenderingModuleWidget.cxx
   qSlicerVolumeRenderingModuleWidget.h
+  qSlicerVolumeRenderingSettingsPanel.cxx
+  qSlicerVolumeRenderingSettingsPanel.h
   )
 
 set(MODULE_MOC_SRCS
   qSlicerVolumeRenderingIO.h
-  qSlicerVolumeRenderingSettingsPanel.h
   qSlicerVolumeRenderingModule.h
   qSlicerVolumeRenderingModuleWidget.h
+  qSlicerVolumeRenderingSettingsPanel.h
   )
 
 set(MODULE_UI_SRCS
