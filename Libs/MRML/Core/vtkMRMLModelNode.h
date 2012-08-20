@@ -60,10 +60,31 @@ public:
   /// Get associated model display MRML node
   vtkMRMLModelDisplayNode* GetModelDisplayNode();
 
-  /// 
-  /// Set and observe poly data for this model
-  vtkGetObjectMacro(PolyData, vtkPolyData);
-  virtual void SetAndObservePolyData(vtkPolyData *PolyData);
+  /// Set the input poly data.
+  /// \sa SetInputPolyData
+  inline void SetAndObservePolyData(vtkPolyData *PolyData);
+
+  /// Get the output poly data
+  /// \sa GetOuptutPolyData()
+  inline vtkPolyData* GetPolyData();
+
+  /// Set the input polydata. Additional filters can be added to the polydata
+  /// in the subclasses.
+  /// By default, there is no polydata filter, the model just keeps a pointer
+  /// to the polydata.
+  /// Subclasses must reimplement SetInputToPolyDataPipeline() to connect the
+  /// polydata if needed.
+  /// \sa SetInputToPolyDataPipeline(), GetInputPolyData()
+  virtual void SetInputPolyData(vtkPolyData* polyData);
+
+  /// Return the input of the polydata pipeline.
+  /// You might want to consider GetOutputPolyData instead.
+  /// \sa SetInputPolyData(), GetOutputPolyData()
+  virtual vtkPolyData* GetInputPolyData();
+
+  /// Get the output polydata. It is the polydata at the end of the pipeline.
+  /// \sa SetInputPolyData(), GetInputPolyData()
+  virtual vtkPolyData* GetOutputPolyData();
 
   /// PolyDataModifiedEvent is fired when PolyData is changed.
   /// While it is possible for the subclasses to fire PolyDataModifiedEvent
@@ -73,15 +94,16 @@ public:
   /// \sa GetModifiedSinceRead()
   enum
     {
-      PolyDataModifiedEvent = 17001
+    PolyDataModifiedEvent = 17001
     };
 
-  /// 
-  /// add an array to the polydata's point/cell data
+  /// Add an array to the input polydata's point/cell data
+  /// \todo demand driven pipeline unsafe: add the scalar array using a filter.
   void AddPointScalars(vtkDataArray *array);
   void AddCellScalars(vtkDataArray *array);
-  /// 
-  /// remove an array from the polydata's point/cell data
+
+  /// Remove an array from the input polydata's point/cell data
+  /// \todo demand driven pipeline unsafe: add the scalar array using a filter.
   void RemoveScalars(const char *scalarName);
   
   /// 
@@ -144,10 +166,24 @@ protected:
   /// to the new display node.
   virtual void OnDisplayNodeAdded(vtkMRMLDisplayNode *dnode);
 
-  virtual void SetPolyData(vtkPolyData* polyData);
+  virtual void SetInputToPolyDataPipeline(vtkPolyData* polyData);
+  void SetOutputPolyDataToDisplayNodes();
 
   /// Data
-  vtkPolyData *PolyData;
+  vtkPolyData *InputPolyData;
 };
+
+//----------------------------------------------------------------------------
+void vtkMRMLModelNode::SetAndObservePolyData(vtkPolyData *polyData)
+{
+  this->SetInputPolyData(polyData);
+}
+
+//----------------------------------------------------------------------------
+vtkPolyData* vtkMRMLModelNode::GetPolyData()
+{
+  return this->GetOuptutPolyData();
+}
+
 
 #endif

@@ -61,7 +61,7 @@ void vtkMRMLModelNode::Copy(vtkMRMLNode *anode)
   vtkMRMLModelNode* modelNode = vtkMRMLModelNode::SafeDownCast(anode);
   if (modelNode)
     {
-    this->SetPolyData(modelNode->PolyData);
+    this->SetInputPolyData(modelNode->GetInputPolyData());
     }
   this->EndModify(disabledModify);
 }
@@ -71,20 +71,10 @@ void vtkMRMLModelNode::ProcessMRMLEvents ( vtkObject *caller,
                                            unsigned long event,
                                            void *callData )
 {
-
   if (this->PolyData == vtkPolyData::SafeDownCast(caller) &&
       this->PolyData != 0 &&
       event ==  vtkCommand::ModifiedEvent)
     {
-    for (int i=0; i<this->GetNumberOfDisplayNodes(); ++i)
-      {
-      vtkMRMLModelDisplayNode *dnode = vtkMRMLModelDisplayNode::SafeDownCast(
-        this->GetNthDisplayNode(i));
-      if (dnode != NULL)
-        {
-        dnode->SetPolyData(this->GetPolyData());
-        }
-      }
     this->InvokeEvent(vtkMRMLModelNode::PolyDataModifiedEvent, NULL);
     }
   this->Superclass::ProcessMRMLEvents(caller, event, callData);
@@ -113,7 +103,58 @@ void vtkMRMLModelNode::PrintSelf(ostream& os, vtkIndent indent)
 }
 
 //----------------------------------------------------------------------------
-void vtkMRMLModelNode::SetAndObservePolyData(vtkPolyData *polyData)
+void vtkMRMLModelNode::SetInputPolyData(vtkPolyData *polyData)
+{
+  if (polyData == this->GetInputData())
+    {
+    return;
+    }
+
+  // Disconnect future old input polydata
+  if (this->GetInputPolyData() != NULL)
+    {
+    vtkEventBroker::GetInstance()->RemoveObservations (
+      this->GetInputPolyData(), vtkCommand::ModifiedEvent, this,
+      this->MRMLCallbackCommand );
+    }
+
+  this->SetInputToPolyDataPipeline(polyData);
+
+  // Connect polydata to display nodes
+  this->SetOutputPolyDataToDisplayNodes();
+
+  // Observe new polydata
+  if (this->GetInputPolyData() != NULL)
+    {
+    vtkEventBroker::GetInstance()->AddObservation(
+      this->GetInputPolyData(), vtkCommand::ModifiedEvent,
+      this, this->MRMLCallbackCommand );
+    }
+
+  this->Modified();
+  this->InvokeEvent( vtkMRMLModelNode::PolyDataModifiedEvent , this);
+}
+
+//----------------------------------------------------------------------------
+void vtkMRMLModelNode::SetInputToPolyDataPipeline(vtkPolyData* polyData)
+{
+  this->PolyData = polyData;
+}
+
+//----------------------------------------------------------------------------
+vtkPolyData* vtkMRMLModelNode::GetInputPolyData()
+{
+  return this->PolyData;
+}
+
+//----------------------------------------------------------------------------
+vtkPolyData* vtkMRMLModelNode::GetOutputPolyData()
+{
+  return this->PolyData;
+}
+
+//----------------------------------------------------------------------------
+void vtkMRMLModelNode::SetOutputPolyDataToDisplayNodes()
 {
   int ndisp = this->GetNumberOfDisplayNodes();
   for (int n=0; n<ndisp; n++)
@@ -122,30 +163,8 @@ void vtkMRMLModelNode::SetAndObservePolyData(vtkPolyData *polyData)
       this->GetNthDisplayNode(n));
     if (dnode)
       {
-      dnode->SetPolyData(polyData);
+      dnode->SetPolyData(this->GetOutputPolyData());
       }
-    }
-
-  if (this->PolyData != NULL)
-    {
-    vtkEventBroker::GetInstance()->RemoveObservations (
-      this->PolyData, vtkCommand::ModifiedEvent, this, this->MRMLCallbackCommand );
-    }
-
-  unsigned long mtime1, mtime2;
-  mtime1 = this->GetMTime();
-  this->SetPolyData(polyData);
-  mtime2 = this->GetMTime();
-
-  if (this->PolyData != NULL)
-    {
-    vtkEventBroker::GetInstance()->AddObservation(
-      this->PolyData, vtkCommand::ModifiedEvent, this, this->MRMLCallbackCommand );
-    }
-
-  if (mtime1 != mtime2)
-    {
-    this->InvokeEvent( vtkMRMLModelNode::PolyDataModifiedEvent , this);
     }
 }
 
@@ -800,7 +819,7 @@ void vtkMRMLModelNode::OnDisplayNodeAdded(vtkMRMLDisplayNode *dnode)
     vtkMRMLModelDisplayNode::SafeDownCast(dnode);
   if (modelDisplayNode)
     {
-    modelDisplayNode->SetPolyData(this->GetPolyData());
+    modelDisplayNode->SetPolyData(this->GetOutputPolyData());
     }
   this->Superclass::OnDisplayNodeAdded(dnode);
 }
