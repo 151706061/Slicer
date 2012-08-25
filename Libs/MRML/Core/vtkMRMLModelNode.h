@@ -12,9 +12,12 @@
 
 =========================================================================auto=*/
 ///  vtkMRMLModelNode - MRML node to represent a 3D surface model.
-/// 
-/// Model nodes describe polygonal data.  Models 
-/// are assumed to have been constructed with the orientation and voxel 
+///
+/// Model nodes describe polygonal data.
+/// When a model display node (vtkMRMLModelDisplayNode) is observed by the
+/// model, the output polydata is automatically set to the input of the model
+/// display node: You don't have to manually set the polydata yourself.
+/// Models are assumed to have been constructed with the orientation and voxel
 /// dimensions of the original segmented volume.
 
 #ifndef __vtkMRMLModelNode_h
@@ -26,6 +29,7 @@ class vtkMRMLModelDisplayNode;
 class vtkMRMLStorageNode;
 
 // VTK includes
+class vtkAssignAttributes;
 class vtkDataArray;
 class vtkPolyData;
 
@@ -60,11 +64,11 @@ public:
   /// Get associated model display MRML node
   vtkMRMLModelDisplayNode* GetModelDisplayNode();
 
-  /// Set the input poly data.
+  /// Obsolete - Set the input poly data.
   /// \sa SetInputPolyData
   inline void SetAndObservePolyData(vtkPolyData *PolyData);
 
-  /// Get the output poly data
+  /// Obsolete - Get the output poly data
   /// \sa GetOuptutPolyData()
   inline vtkPolyData* GetPolyData();
 
@@ -84,7 +88,10 @@ public:
 
   /// Get the output polydata. It is the polydata at the end of the pipeline.
   /// \sa SetInputPolyData(), GetInputPolyData()
-  virtual vtkPolyData* GetOutputPolyData();
+  vtkPolyData* GetOutputPolyData();
+
+  /// 
+  //virtual vtkPolyData* GetOutputPolyData();
 
   /// PolyDataModifiedEvent is fired when PolyData is changed.
   /// While it is possible for the subclasses to fire PolyDataModifiedEvent
@@ -97,23 +104,38 @@ public:
     PolyDataModifiedEvent = 17001
     };
 
-  /// Add an array to the input polydata's point/cell data
+  /// Add an array to the input polydata's point/cell data.
+  /// Warning: Not demand driven pipeline compliant.
   /// \todo demand driven pipeline unsafe: add the scalar array using a filter.
+  /// maybe vtkAddMembershipArray would work.
   void AddPointScalars(vtkDataArray *array);
   void AddCellScalars(vtkDataArray *array);
 
-  /// Remove an array from the input polydata's point/cell data
+  /// Remove an array from the input polydata's point/cell data.
+  /// Warning: Not demand driven pipeline compliant.
   /// \todo demand driven pipeline unsafe: add the scalar array using a filter.
   void RemoveScalars(const char *scalarName);
-  
-  /// 
+
   /// Get the currently active Point/Cell array name, type =
-  /// scalars, vectors, normals, tcoords, tensors, null checks all in that
-  /// order for an active array. Returns an empty string if it can't find one.
-  const char *GetActivePointScalarName(const char *type);
-  const char *GetActiveCellScalarName(const char *type);
-  
-  /// 
+  /// vtkDataSetAttributes::AttributeTypes for an active array.
+  /// Returns an empty string if it can't find one or if no input polydata
+  /// is set.
+  const char *GetActivePointScalarName(int type);
+  const char *GetActiveCellScalarName(int type);
+
+  /// Return true if the output polydata point data has an array with a
+  /// \a scalarName name.
+  /// \sa HasPointScalarName
+  bool HasPointScalarName(const char* scalarName);
+
+  /// Return true if the output polydata cell data has an array with a
+  /// \a scalarName name.
+  /// \sa HasCellScalarName
+  bool HasCellScalarName(const char* scalarName);
+
+  /// Obsolete
+  int SetActiveScalars(const char *scalarName, int attributeType);
+
   /// Set the active poly data Point/Cell scalar array, checks for the
   /// scalarName as being a valid Point/Cell array, and then will set it to be the active
   /// attribute type as designated by typeName (scalars if null or
@@ -121,13 +143,14 @@ public:
   /// vtkDataSetAttributes::GetAttributeTypeAsString, SetActiveScalars converts
   /// it to an integer type to pass onto the Point/Cell methods
   /// Also updates the display node's active scalars
-  int SetActiveScalars(const char *scalarName, const char *typeName);
   int SetActivePointScalars(const char *scalarName, int attributeType);
   int SetActiveCellScalars(const char *scalarName, int attributeType);
-  
 
+  /// Utility function that returns the attribute type from its name.
+  /// It is the opposite of vtkDataSetAttributes::GetAttributeTypeAsString(int)
+  /// \sa vtkDataSetAttributes::GetAttributeTypeAsString()
+  static int GetAttributeTypeFromString(const char* typeName);
 
-  /// 
   /// Take scalar fields and composite them into a new one.
   /// New array will have values from the background array where the overlay is
   /// +/- if showOverlayPositive/Negative are 0.
@@ -137,11 +160,16 @@ public:
   /// New array name is backgroundName+overlayName
   /// Returns 1 on success, 0 on failure.
   /// Based on code from K. Teich, MGH
-  int CompositeScalars(const char* backgroundName, const char* overlayName, float overlayMin, float overlayMax, int showOverlayPositive, int showOverlayNegative, int reverseOverlay);
+  /// Warning: Not demand driven pipeline compliant
+  int CompositeScalars(const char* backgroundName, const char* overlayName,
+                       float overlayMin, float overlayMax,
+                       int showOverlayPositive, int showOverlayNegative,
+                       int reverseOverlay);
 
   /// Get bounding box in global RAS the form (xmin,xmax, ymin,ymax, zmin,zmax).
   virtual void GetRASBounds(double bounds[6]);
 
+  /// Warning: Not demand driven pipeline compliant.
   virtual bool CanApplyNonLinearTransforms()const;
   virtual void ApplyTransform(vtkAbstractTransform* transform);
 
@@ -167,10 +195,12 @@ protected:
   virtual void OnDisplayNodeAdded(vtkMRMLDisplayNode *dnode);
 
   virtual void SetInputToPolyDataPipeline(vtkPolyData* polyData);
-  void SetOutputPolyDataToDisplayNodes();
+  /// To be called when the output poly data of the pipeline is changed
+  virtual void OutputPolyDataModified();
+  /// Set the output polydata to all the display nodes.
+  virtual void SetOutputPolyDataToDisplayNodes();
 
-  /// Data
-  vtkPolyData *InputPolyData;
+  vtkAssignAttributes* AssignAttributes;
 };
 
 //----------------------------------------------------------------------------
@@ -182,7 +212,7 @@ void vtkMRMLModelNode::SetAndObservePolyData(vtkPolyData *polyData)
 //----------------------------------------------------------------------------
 vtkPolyData* vtkMRMLModelNode::GetPolyData()
 {
-  return this->GetOuptutPolyData();
+  return this->GetOutputPolyData();
 }
 
 

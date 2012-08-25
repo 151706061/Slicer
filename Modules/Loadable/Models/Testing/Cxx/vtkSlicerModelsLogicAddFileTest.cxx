@@ -38,6 +38,7 @@ bool testAddModelWithPolyData(bool withPolyData);
 int vtkSlicerModelsLogicAddFileTest( int argc, char * argv[] )
 {
   bool res = true;
+  /*
   std::cout << ">>>>>>>>>>>>>>>>>> "
             << "The following can print errors and warnings"
             << " <<<<<<<<<<<<<<<<<<" << std::endl;
@@ -48,6 +49,7 @@ int vtkSlicerModelsLogicAddFileTest( int argc, char * argv[] )
   std::cout << ">>>>>>>>>>>>>>>>>> "
             << "end of normal errors and warnings"
             << " <<<<<<<<<<<<<<<<<<" << std::endl;
+  */
   if (argc > 1)
     {
     res = testAddFile(argv[1]) && res;
@@ -64,7 +66,7 @@ bool testAddEmptyFile(const char * filePath)
   vtkMRMLModelNode* model = modelsLogic->AddModel(filePath);
   if (model != 0)
     {
-    std::cerr << "Line " << __LINE__
+    std::cerr << "Error line " << __LINE__
               << ": Adding an invalid file shall not return a valid model"
               << std::endl;
     return false;
@@ -79,7 +81,7 @@ bool testAddEmptyFile(const char * filePath)
   if (model != 0 ||
       scene->GetNumberOfNodes() != nodeCount)
     {
-    std::cerr << "Line " << __LINE__
+    std::cerr << "Error line " << __LINE__
               << ": Adding an invalid file shall not add nodes in scene. "
               << scene->GetNumberOfNodes() << " vs " << nodeCount
               << std::endl;
@@ -96,7 +98,7 @@ bool testAddFile(const char * filePath)
   vtkMRMLModelNode* model = modelsLogic->AddModel(filePath);
   if (model != 0)
     {
-    std::cerr << "Line " << __LINE__
+    std::cerr << "Error line " << __LINE__
               << ": File can't be loaded if no scene is set."
               << std::endl;
     return false;
@@ -125,19 +127,19 @@ bool testAddModelWithPolyData(bool withPolyData)
   vtkNew<vtkSlicerModelsLogic> modelsLogic;
   if (modelsLogic->AddModel(poly) != 0)
     {
-    std::cout << __LINE__
-      <<"vtkSlicerModelsLogic::AddModel(vtkPolyData*) failed."
+    std::cout << "Error line " << __LINE__
+      <<": vtkSlicerModelsLogic::AddModel(vtkPolyData*) failed."
       << std::endl;
     return false;
     }
   vtkNew<vtkMRMLScene> scene;
   modelsLogic->SetMRMLScene(scene.GetPointer());
   vtkMRMLModelNode* model = modelsLogic->AddModel(poly);
-  if (model->GetPolyData() != poly ||
+  if (model->GetInputPolyData() != poly ||
       model->GetModelDisplayNode() == 0)
     {
-    std::cout << __LINE__
-      <<"vtkSlicerModelsLogic::AddModel(vtkPolyData*) failed."
+    std::cout << "Error line " << __LINE__
+      <<": vtkSlicerModelsLogic::AddModel(vtkPolyData*) failed."
       << std::endl;
     return false;
     }

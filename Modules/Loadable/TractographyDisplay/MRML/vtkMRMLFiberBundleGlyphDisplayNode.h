@@ -58,13 +58,8 @@ class VTK_SLICER_TRACTOGRAPHYDISPLAY_MODULE_MRML_EXPORT vtkMRMLFiberBundleGlyphD
   /// Get node XML tag name (like Volume, UnstructuredGrid)
   virtual const char* GetNodeTagName ( ) {return "FiberBundleGlyphDisplayNode";};
 
-  ///
-  /// Sets polydata for glyph input (usually stored in FiberBundle node)
-  void SetPolyData(vtkPolyData *glyphPolyData);
-
-  ///
-  /// Gets resultin glyph PolyData
-  virtual vtkPolyData* GetPolyData();
+  /// Gets result in glyph PolyData
+  virtual vtkPolyData* GetOutputPolyData();
 
   ///
   /// Update the pipeline based on this node attributes

@@ -70,6 +70,7 @@ endif()
 # Sources
 # --------------------------------------------------------------------------
 set(MRMLCore_SRCS
+  vtkAssignAttributes.cxx
   vtkEventBroker.cxx
   vtkImageAccumulateDiscrete.cxx
   vtkImageBimodalAnalysis.cxx

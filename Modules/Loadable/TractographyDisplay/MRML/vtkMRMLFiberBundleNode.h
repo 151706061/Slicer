@@ -149,8 +149,7 @@ public:
 
   ///
   /// Gets the subsampled PolyData converted from the real data in the node
-  virtual vtkPolyData* GetFilteredPolyData();
-
+  virtual vtkPolyData* GetOutputPolyData();
 
   ///
   /// get associated line display node or NULL if not set
@@ -205,7 +204,7 @@ protected:
   vtkIdTypeArray* ShuffledIds;
 
 
-  virtual void SetPolyData(vtkPolyData* polyData);
+  virtual void SetInputToPolyDataPipeline(vtkPolyData* polyData);
 
   vtkExtractSelectedPolyDataIds* ExtractSelectedPolyDataIds;
   vtkCleanPolyData* CleanPolyDataPostSubsampling;
