@@ -481,19 +481,6 @@ void qMRMLLayoutManagerPrivate::onNodeRemovedEvent(vtkObject* scene, vtkObject* 
 }
 
 //------------------------------------------------------------------------------
-void qMRMLLayoutManagerPrivate::onSceneRestoredEvent()
-{
-  //qDebug() << "qMRMLLayoutManagerPrivate::onSceneRestoredEvent";
-
-  if (this->MRMLLayoutNode)
-    {
-    this->updateWidgetsFromViewNodes();
-    // trigger an update to the layout
-    this->MRMLLayoutNode->Modified();
-    }
-}
-
-//------------------------------------------------------------------------------
 void qMRMLLayoutManagerPrivate::onSceneAboutToBeClosedEvent()
 {
   Q_Q(qMRMLLayoutManager);
@@ -878,9 +865,6 @@ void qMRMLLayoutManager::setMRMLScene(vtkMRMLScene* scene)
 
   d->qvtkReconnect(oldScene, scene, vtkMRMLScene::EndBatchProcessEvent,
                    d, SLOT(updateLayoutFromMRMLScene()));
-
-  d->qvtkReconnect(oldScene, scene, vtkMRMLScene::EndRestoreEvent,
-                   d, SLOT(onSceneRestoredEvent()));
 
   d->qvtkReconnect(oldScene, scene, vtkMRMLScene::StartCloseEvent,
                    d, SLOT(onSceneAboutToBeClosedEvent()));
