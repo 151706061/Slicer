@@ -591,9 +591,8 @@ vtkMRMLLayoutLogic::~vtkMRMLLayoutLogic()
 void vtkMRMLLayoutLogic::SetMRMLSceneInternal(vtkMRMLScene* newScene)
 {
   vtkNew<vtkIntArray> sceneEvents;
+  sceneEvents->InsertNextValue(vtkMRMLScene::NodeRemovedEvent);
   sceneEvents->InsertNextValue(vtkMRMLScene::EndBatchProcessEvent);
-  sceneEvents->InsertNextValue(vtkMRMLScene::StartRestoreEvent);
-  sceneEvents->InsertNextValue(vtkMRMLScene::EndRestoreEvent);
   this->SetAndObserveMRMLSceneEventsInternal(newScene, sceneEvents.GetPointer());
 }
 
@@ -632,15 +631,12 @@ void vtkMRMLLayoutLogic::OnMRMLNodeModified(vtkMRMLNode* vtkNotUsed(node))
 }
 
 //----------------------------------------------------------------------------
-void vtkMRMLLayoutLogic::OnMRMLSceneStartRestore()
+void vtkMRMLLayoutLogic::OnMRMLSceneNodeRemoved(vtkMRMLNode* removedNode)
 {
-    this->UnobserveMRMLScene();
-}
-
-//----------------------------------------------------------------------------
-void vtkMRMLLayoutLogic::OnMRMLSceneEndRestore()
-{
-    this->UpdateLayoutNode();
+  if (this->LayoutNode == removedNode)
+    {
+    this->SetLayoutNode(0);
+    }
 }
 
 //----------------------------------------------------------------------------
