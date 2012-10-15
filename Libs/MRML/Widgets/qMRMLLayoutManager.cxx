@@ -481,6 +481,14 @@ void qMRMLLayoutManagerPrivate::onNodeRemovedEvent(vtkObject* scene, vtkObject* 
 }
 
 //------------------------------------------------------------------------------
+void qMRMLLayoutManagerPrivate::onSceneEndBatchProcessEvent()
+{
+  Q_Q(qMRMLLayoutManager);
+  this->updateWidgetsFromViewNodes();
+  this->updateLayoutFromMRMLScene();
+}
+
+//------------------------------------------------------------------------------
 void qMRMLLayoutManagerPrivate::onSceneAboutToBeClosedEvent()
 {
   Q_Q(qMRMLLayoutManager);
@@ -850,7 +858,7 @@ void qMRMLLayoutManager::setMRMLScene(vtkMRMLScene* scene)
   d->MRMLLayoutNode = 0;
 
   d->qvtkReconnect(oldScene, scene, vtkMRMLScene::EndBatchProcessEvent,
-                   d, SLOT(updateWidgetsFromViewNodes()));
+                   d, SLOT(onSceneEndBatchProcessEvent()));
   // We want to connect the logic to the scene first (before the following
   // qvtkReconnect); that way, anytime the scene is modified, the logic
   // callbacks will be called  before qMRMLLayoutManager and keep the scene
@@ -862,9 +870,6 @@ void qMRMLLayoutManager::setMRMLScene(vtkMRMLScene* scene)
 
   d->qvtkReconnect(oldScene, scene, vtkMRMLScene::NodeRemovedEvent,
                    d, SLOT(onNodeRemovedEvent(vtkObject*,vtkObject*)));
-
-  d->qvtkReconnect(oldScene, scene, vtkMRMLScene::EndBatchProcessEvent,
-                   d, SLOT(updateLayoutFromMRMLScene()));
 
   d->qvtkReconnect(oldScene, scene, vtkMRMLScene::StartCloseEvent,
                    d, SLOT(onSceneAboutToBeClosedEvent()));
