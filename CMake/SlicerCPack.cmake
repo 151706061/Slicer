@@ -62,6 +62,18 @@ Plugins = ${Slicer_QtPlugins_DIR}
   file(WRITE ${slicer_cpack_bundle_fixup_directory}/CMakeLists.txt
     "install(SCRIPT \"${slicer_cpack_bundle_fixup_directory}/SlicerCPackBundleFixup.cmake\")")
   add_subdirectory(${slicer_cpack_bundle_fixup_directory} ${slicer_cpack_bundle_fixup_directory}-binary)
+
+  if (Slicer_ADDITIONAL_PROJECTS)
+    foreach(additional_project ${Slicer_ADDITIONAL_PROJECTS})
+      find_package(${additional_project})
+      if (${additional_project}_FOUND)
+        include(${${additional_project}_USE_FILE})
+        set(CPACK_INSTALL_CMAKE_PROJECTS
+          "${CPACK_INSTALL_CMAKE_PROJECTS};${${additional_project}_CPACK_INSTALL_CMAKE_PROJECTS}")
+        endif()
+    endforeach()
+  endif()
+
 endif()
 
 # Install Slicer
@@ -81,7 +93,7 @@ set(CPACK_RESOURCE_FILE_LICENSE "${Slicer_SOURCE_DIR}/License.txt")
 set(CPACK_PACKAGE_VERSION_MAJOR "${Slicer_VERSION_MAJOR}")
 set(CPACK_PACKAGE_VERSION_MINOR "${Slicer_VERSION_MINOR}")
 set(CPACK_PACKAGE_VERSION_PATCH "${Slicer_VERSION_PATCH}")
-SET(CPACK_PACKAGE_VERSION "${Slicer_VERSION_FULL}")
+set(CPACK_PACKAGE_VERSION "${Slicer_VERSION_FULL}")
 set(CPACK_SYSTEM_NAME "${Slicer_OS}-${Slicer_ARCHITECTURE}")
 
 if(APPLE)

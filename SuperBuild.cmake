@@ -296,6 +296,13 @@ if(Slicer_BUILD_EXTENSIONMANAGER_SUPPORT)
     )
 endif()
 
+if(Slicer_ADDITIONAL_PROJECTS)
+  foreach(additional_project ${Slicer_ADDITIONAL_PROJECTS})
+    list(APPEND ep_superbuild_extra_args
+      -D${additional_project}_DIR:PATH=${${additional_project}_DIR})
+  endforeach()
+endif()
+
 # Set CMake OSX variable to pass down the external project
 set(CMAKE_OSX_EXTERNAL_PROJECT_ARGS)
 if(APPLE)
